@@ -229,7 +229,7 @@ NFL_MARKET_ODDS = {
     ("Arizona Cardinals", "San Francisco 49ers"): {"home_ml": "-460", "away_ml": "+360", "book": "FanDuel (2026-09-21)"},
     ("Minnesota Vikings", "Tampa Bay Buccaneers"): {"home_ml": "+102", "away_ml": "-120", "book": "FanDuel (2026-09-21)"},
     ("Las Vegas Raiders", "New Orleans Saints"): {"home_ml": "-168", "away_ml": "+142", "book": "FanDuel (2026-09-21)"},
-    ("Baltimore Ravens", "Dallas Cowboys"): {"home_ml": "+130", "away_ml": "-154", "book": "FanDuel (2026-09-21)"},
+    ("Baltimore Ravens", "Dallas Cowboys"): {"home_ml": "+134", "away_ml": "-158", "book": "FanDuel (2026-09-22)"},
     ("Los Angeles Rams", "Denver Broncos"): {"home_ml": "+118", "away_ml": "-138", "book": "FanDuel (2026-09-21)"},
     ("Philadelphia Eagles", "Chicago Bears"): {"home_ml": "+146", "away_ml": "-174", "book": "FanDuel (2026-09-21)"},
 }

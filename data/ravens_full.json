@@ -1,6 +1,6 @@
 {
   "team": "Baltimore Ravens",
-  "as_of": "2026-09-22",
+  "as_of": "2026-09-23",
   "record": {
     "w": 1,
     "l": 1,
@@ -591,18 +591,18 @@
       "neutral": true,
       "site": "Rio de Janeiro, Brazil",
       "market_odds": {
-        "ravens": "-154",
-        "opponent": "+130",
+        "ravens": "-158",
+        "opponent": "+134",
         "spread": "Ravens -3",
         "total": 52.5,
-        "book": "FanDuel (2026-09-21)"
+        "book": "FanDuel (2026-09-22)"
       },
       "ravens_win_prob": 0.58,
       "model_odds": "-151",
       "value_bet": {
-        "market_implied_prob": 0.606,
+        "market_implied_prob": 0.612,
         "model_prob": 0.58,
-        "edge_pts": -0.026,
+        "edge_pts": -0.032,
         "read": "Model leans slightly more toward the opponent than the market does.",
         "large_disagreement": false
       }
