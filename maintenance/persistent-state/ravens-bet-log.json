@@ -49,9 +49,9 @@
     "headline": "Model likes the Ravens here (lean favorite)",
     "reasoning": "The model gives the Ravens a 58% win probability (Lean tier) in this matchup \u2014 and model leans slightly more toward the opponent than the market does..",
     "logged_at": "2026-09-22",
-    "graded": false,
-    "actual_winner": null,
-    "side_won": null
+    "graded": true,
+    "actual_winner": "Baltimore Ravens",
+    "side_won": true
   },
   {
     "week": 4,
@@ -67,9 +67,9 @@
     "headline": "Model likes the Ravens here (moderate favorite)",
     "reasoning": "The model gives the Ravens a 78% win probability (Moderate tier) in this matchup, though we don't have a real market line to compare against yet.",
     "logged_at": "2026-09-22",
-    "graded": false,
-    "actual_winner": null,
-    "side_won": null
+    "graded": true,
+    "actual_winner": "Baltimore Ravens",
+    "side_won": true
   },
   {
     "week": 5,

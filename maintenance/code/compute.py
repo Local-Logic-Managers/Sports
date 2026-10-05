@@ -84,23 +84,33 @@ NFL_NEW_HC_TEAMS = {  # first season under a new head coach, 2026 -- drives the 
 # work per the Ravens diagnostic. Extend opportunistically as real injury/
 # transaction news gets sourced for other teams.
 NFL_INJURY_TURNOVER = {
-    # 2026-09-21: refreshed for Week 3 off HC Jesse Minter's post-Week-2 press conference
-    # (Flowers/Stanley/Madubuike specifically named as trending toward availability, final call
-    # Wednesday 9/23 -- so downgraded from "out" to "questionable" rather than assumed clear) plus
-    # the FantasyPros Week 3 injury roundup. Ja'Kobi Lane placed on IR (wrist surgery) -- out for
-    # the season. Buchanan/Tampa had no fresh Week 3 update, so softened from Week 2's definitive
-    # "out" to "questionable" rather than carried forward as still-out with no supporting news.
+    # 2026-10-02: refreshed for Week 4 (vs. Tennessee Titans, 10/4) off Wed/Thu practice-participation
+    # reports (Yahoo Sports, RoundTable.io, ClutchPoints, SharpFootballAnalysis roundup -- official
+    # Friday designations hadn't posted yet as of this refresh). Nnamdi Madubuike and Teddye Buchanan
+    # are off the injury report entirely (back to full health) -- removed. Zay Flowers and Marlon
+    # Humphrey were upgraded to full practice Thursday and are expected to play -- removed from the
+    # questionable list. New: Jovaughn Gwyn (OL) reportedly facing a multi-week absence (fractured
+    # fibula per one report) and Ethan Pocic (C) DNP both Wed/Thu with a knee issue -- notable since
+    # both are center depth behind the already-season-ending Danny Pinter. Lamar Jackson (back) was
+    # limited Wed but full Thu with no game designation (HC Minter called it "minor") -- not modeled
+    # as an injury adjustment since he's expected to play at full snap count.
+    # 2026-10-05: refreshed for Week 5 (at Atlanta Falcons, 10/11) off this week's reporting
+    # (NBC Sports, baltimoreravens.com, The Baltimore Banner, Roundtable.io). Ethan Pocic upgraded
+    # out -> placed on IR alongside Gwyn (confirmed multi-source), not just a practice-report
+    # questionable anymore -- Vega Ioane now stepping in at center. Lamar Jackson (back) and Zay
+    # Flowers (hamstring) both back to full practice participation / reporting healthy -- no
+    # longer modeled. Everything else carried forward unchanged (no fresh Week 5 report had
+    # dropped yet as of this refresh; official Wed/Thu practice reports still to come).
     "Baltimore Ravens": {
         "injuries": [
             {"pos": "C", "severity": "out"},              # Danny Pinter, out for the season
             {"pos": "WR", "severity": "out"},              # Ja'Kobi Lane, IR (wrist surgery), out for the season
-            {"pos": "WR", "severity": "questionable"},     # Zay Flowers, hamstring, trending toward playing (final call 9/23)
-            {"pos": "OT", "severity": "questionable"},     # Ronnie Stanley, toe, trending toward playing (final call 9/23)
-            {"pos": "DT", "severity": "questionable"},     # Nnamdi Madubuike, neck, trending toward playing (final call 9/23)
-            {"pos": "ILB", "severity": "questionable"},    # Teddye Buchanan, knee, no fresh Week 3 update
-            {"pos": "CB", "severity": "questionable"},     # T.J. Tampa, knee, no fresh Week 3 update
-            {"pos": "OLB", "severity": "questionable"},    # Trey Hendrickson, finger, recurring
-            {"pos": "G", "severity": "questionable"},      # John Simpson, groin, recurring
+            {"pos": "C", "severity": "out"},               # Jovaughn Gwyn, fractured fibula, IR, ~2-3 months
+            {"pos": "C", "severity": "out"},               # Ethan Pocic, knee, placed on IR
+            {"pos": "OT", "severity": "questionable"},     # Ronnie Stanley, toe, trending toward full participation
+            {"pos": "OLB", "severity": "questionable"},    # Trey Hendrickson, finger (multi-fracture per reports)
+            {"pos": "G", "severity": "questionable"},      # John Simpson, groin, limited
+            {"pos": "CB", "severity": "questionable"},     # T.J. Tampa, knee, no fresh update carried forward
         ],
         "departures": ["TE", "FB", "OT", "P", "S", "CB", "OLB", "WR"],  # Likely, Ricard, Faalele, Stout, Washington, Alexander, Oweh, C.Johnson
         "acquisitions": ["OLB", "S", "CB", "LB", "ILB"],                 # D.Jones, Gilman, White, Hendrickson, Barrett
@@ -211,27 +221,12 @@ for team, win_total in NFL_SEASON_WIN_TOTALS.items():
 # log_predictions.py's append-only/no-duplicate logic still governs whether new rows here
 # actually produce new logged picks.
 nfl_week1 = [(r["away"], r["home"], r["date"]) for r in read_csv("nfl_slate.csv")]
-# Real current market lines for the open Week 3 slate (FanDuel Research moneylines, sourced
-# via WebSearch/WebFetch, 2026-09-21; Ravens game uses the more specific FanDuel line already
-# tracked in ravens-schedule.json for consistency) -- keyed by (away, home). A game not in this
-# dict just doesn't get a market_odds/value_bet/blended_prob block attached.
+# Real current market lines for the open Week 5 slate (DraftKings via statsniper.com, 2026-10-05) --
+# keyed by (away, home). The full Week 4 slate above has been played/graded and is no longer open,
+# so last run's Week 4 lines are retired. A game not in this dict just doesn't get a
+# market_odds/value_bet/blended_prob block attached -- populated opportunistically, not every fixture.
 NFL_MARKET_ODDS = {
-    ("Atlanta Falcons", "Green Bay Packers"): {"home_ml": "-270", "away_ml": "+220", "book": "FanDuel (2026-09-21)"},
-    ("Los Angeles Chargers", "Buffalo Bills"): {"home_ml": "-360", "away_ml": "+290", "book": "FanDuel (2026-09-21)"},
-    ("Carolina Panthers", "Cleveland Browns"): {"home_ml": "+124", "away_ml": "-146", "book": "FanDuel (2026-09-21)"},
-    ("New York Jets", "Detroit Lions"): {"home_ml": "-335", "away_ml": "+270", "book": "FanDuel (2026-09-21)"},
-    ("Houston Texans", "Indianapolis Colts"): {"home_ml": "+128", "away_ml": "-152", "book": "FanDuel (2026-09-21)"},
-    ("New England Patriots", "Jacksonville Jaguars"): {"home_ml": "-156", "away_ml": "+132", "book": "FanDuel (2026-09-21)"},
-    ("Kansas City Chiefs", "Miami Dolphins"): {"home_ml": "+540", "away_ml": "-770", "book": "FanDuel (2026-09-21)"},
-    ("Tennessee Titans", "New York Giants"): {"home_ml": "-194", "away_ml": "+162", "book": "FanDuel (2026-09-21)"},
-    ("Cincinnati Bengals", "Pittsburgh Steelers"): {"home_ml": "+144", "away_ml": "-172", "book": "FanDuel (2026-09-21)"},
-    ("Seattle Seahawks", "Washington Commanders"): {"home_ml": "+245", "away_ml": "-300", "book": "FanDuel (2026-09-21)"},
-    ("Arizona Cardinals", "San Francisco 49ers"): {"home_ml": "-460", "away_ml": "+360", "book": "FanDuel (2026-09-21)"},
-    ("Minnesota Vikings", "Tampa Bay Buccaneers"): {"home_ml": "+102", "away_ml": "-120", "book": "FanDuel (2026-09-21)"},
-    ("Las Vegas Raiders", "New Orleans Saints"): {"home_ml": "-168", "away_ml": "+142", "book": "FanDuel (2026-09-21)"},
-    ("Baltimore Ravens", "Dallas Cowboys"): {"home_ml": "+150", "away_ml": "-178", "book": "FanDuel (2026-09-24)"},
-    ("Los Angeles Rams", "Denver Broncos"): {"home_ml": "+118", "away_ml": "-138", "book": "FanDuel (2026-09-21)"},
-    ("Philadelphia Eagles", "Chicago Bears"): {"home_ml": "+146", "away_ml": "-174", "book": "FanDuel (2026-09-21)"},
+    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "+160", "away_ml": "-192", "book": "DraftKings via statsniper.com (2026-10-05)"},
 }
 
 nfl_games = []
@@ -251,7 +246,7 @@ for a, h, d in nfl_week1:
     nfl_games.append(g)
 results["leagues"]["nfl"] = {
     "label": "NFL",
-    "status": "v2 ratings (win-total baseline + injury/turnover/regime-change adjustments) — Weeks 1-2 complete (all graded), Week 3 slate below (Sept 24-28, incl. Ravens-Cowboys in Rio de Janeiro)",
+    "status": "v2 ratings (win-total baseline + injury/turnover/regime-change adjustments) — Weeks 1-4 complete; Week 5 slate below (Oct 8-12)",
     "model_version": 2,
     "ratings": nfl_ratings, "games": nfl_games,
 }
@@ -267,7 +262,11 @@ for r in mlb_rows:
 
 mlb_slate = [(r["away"], r["home"], r["date"]) for r in read_csv("mlb_slate.csv")]
 mlb_games = [build_game("mlb", a, h, d, mlb_ratings.get(h, 0), mlb_ratings.get(a, 0)) for a, h, d in mlb_slate]
-results["leagues"]["mlb"] = {"label": "MLB", "status": "in season", "ratings": mlb_ratings, "games": mlb_games}
+results["leagues"]["mlb"] = {
+    "label": "MLB",
+    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway: Division Series are live as of Oct 5 (Rays lead Yankees 1-0, Game 2 tonight; White Sox lead Guardians 1-0, Game 2 tonight; Brewers lead Padres 2-0, one win from the sweep; Dodgers-Braves tied 1-1), after a Wild Card round that saw the White Sox post their first postseason series win in 20+ years. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+    "ratings": mlb_ratings, "games": mlb_games,
+}
 
 # ---------------- Premier League (live) ----------------
 epl_rows = read_csv("epl_2026_27_standings.csv")
@@ -281,7 +280,7 @@ for r in epl_rows:
 # consensus price (Covers.com) -- keyed by (away, home). Most EPL games won't be
 # in this dict; it's populated opportunistically, not every fixture.
 EPL_MARKET_ODDS = {
-    ("Arsenal", "Aston Villa"): {"home_win_prob": 0.13, "draw_prob": 0.23, "away_win_prob": 0.65, "book": "Covers.com consensus"},
+    ("Leeds United", "Arsenal"): {"home_win_prob": 0.671, "draw_prob": 0.206, "away_win_prob": 0.123, "book": "Bet365 via kickoff.co.uk (2026-10-04), vig removed"},
 }
 
 epl_fixtures = [(r["away"], r["home"], r["date"]) for r in read_csv("epl_fixtures.csv")]

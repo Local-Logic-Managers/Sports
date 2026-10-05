@@ -47,21 +47,42 @@
     "opponent": "Tennessee Titans",
     "location": "home",
     "date": "2026-10-04",
-    "neutral": false
+    "neutral": false,
+    "market_odds": {
+      "ravens": "-650",
+      "opponent": "+470",
+      "spread": "Ravens -11.5",
+      "total": 43,
+      "book": "DraftKings via statsniper.com/VegasInsider (2026-10-01), cross-checked vs. Dimers.com (-614/+590) and Covers/Kalshi (~87% Ravens)"
+    }
   },
   {
     "week": 5,
     "opponent": "Atlanta Falcons",
     "location": "away",
     "date": "2026-10-11",
-    "neutral": false
+    "neutral": false,
+    "market_odds": {
+      "ravens": "-192",
+      "opponent": "+160",
+      "spread": "Ravens -3.5",
+      "total": 46.5,
+      "book": "DraftKings via statsniper.com (2026-10-05) — line has moved in from the 2026-10-02 snapshot (was -278/Ravens -6/49.5), likely reflecting the Gwyn/Pocic O-line injury news"
+    }
   },
   {
     "week": 6,
     "opponent": "Cleveland Browns",
     "location": "away",
     "date": "2026-10-18",
-    "neutral": false
+    "neutral": false,
+    "market_odds": {
+      "ravens": "-250",
+      "opponent": "+205",
+      "spread": "Ravens -6.5",
+      "total": 44.5,
+      "book": "DraftKings via statsniper.com (2026-10-04) — single-sourced snapshot, not cross-checked against a second book; lines may move before kickoff"
+    }
   },
   {
     "week": 7,
