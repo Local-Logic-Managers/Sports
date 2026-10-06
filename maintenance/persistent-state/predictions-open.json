@@ -176,22 +176,6 @@
     "graded": false
   },
   {
-    "id": "nfl-2026-10-05-atlantafalcons-neworleanssaints",
-    "league": "nfl",
-    "sport_label": "NFL",
-    "date": "2026-10-05",
-    "away": "Atlanta Falcons",
-    "home": "New Orleans Saints",
-    "home_win_prob": 0.549,
-    "pick": "New Orleans Saints",
-    "pick_prob": 0.549,
-    "confidence": "Toss-up",
-    "note": null,
-    "model_version": 2,
-    "logged_at": "2026-09-30",
-    "graded": false
-  },
-  {
     "id": "mls-2026-10-10-newyorkcityfc-chicagofire",
     "league": "mls",
     "sport_label": "MLS",
@@ -668,22 +652,6 @@
     "confidence": "Lean",
     "note": null,
     "model_version": 2,
-    "logged_at": "2026-10-05",
-    "graded": false
-  },
-  {
-    "id": "mls-2026-10-11-dcunited-intermiamicf",
-    "league": "mls",
-    "sport_label": "MLS",
-    "date": "2026-10-11",
-    "away": "D.C. United",
-    "home": "Inter Miami CF",
-    "home_win_prob": 0.711,
-    "pick": "Inter Miami CF",
-    "pick_prob": 0.711,
-    "confidence": "Moderate",
-    "note": null,
-    "model_version": 1,
     "logged_at": "2026-10-05",
     "graded": false
   }

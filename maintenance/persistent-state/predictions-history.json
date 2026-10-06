@@ -8044,6 +8044,25 @@
       "actual_winner": "Carolina Panthers",
       "correct": false,
       "brier": 0.483
+    },
+    {
+      "id": "nfl-2026-10-05-atlantafalcons-neworleanssaints",
+      "league": "nfl",
+      "sport_label": "NFL",
+      "date": "2026-10-05",
+      "away": "Atlanta Falcons",
+      "home": "New Orleans Saints",
+      "home_win_prob": 0.549,
+      "pick": "New Orleans Saints",
+      "pick_prob": 0.549,
+      "confidence": "Toss-up",
+      "note": null,
+      "model_version": 2,
+      "logged_at": "2026-09-30",
+      "graded": true,
+      "actual_winner": "Atlanta Falcons",
+      "correct": false,
+      "brier": 0.3014
     }
   ],
   "rollups": {}

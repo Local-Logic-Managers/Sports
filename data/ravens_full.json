@@ -1,11 +1,11 @@
 {
   "team": "Baltimore Ravens",
-  "as_of": "2026-10-05",
+  "as_of": "2026-10-06",
   "record": {
     "w": 3,
     "l": 1,
     "t": 0,
-    "note": "3-1 under HC Jesse Minter after beating the Tennessee Titans 24-18 at home (2026-10-04). Next up: Week 5 on the road at the Atlanta Falcons (2026-10-11, SNF), where Baltimore is favored (DraftKings ML -192, spread -3.5 as of 2026-10-05 \u2014 line has moved in notably from earlier in the week amid O-line injury news)."
+    "note": "3-1 under HC Jesse Minter after beating the Tennessee Titans 24-18 at home (2026-10-04). Next up: Week 5 on the road at the Atlanta Falcons (2026-10-11, SNF), where Baltimore is still favored but the line has drifted back toward Atlanta since 10-05 (median of books now Ravens -140, spread -3, as of 2026-10-06 \u2014 was -192/-3.5; official injury reports for this game aren't out until Friday 10-09)."
   },
   "coaching_change": {
     "headline": "New head coach for 2026: Jesse Minter (4th HC in franchise history), replacing John Harbaugh after 18 seasons.",
@@ -646,18 +646,18 @@
       "date": "2026-10-11",
       "neutral": false,
       "market_odds": {
-        "ravens": "-192",
-        "opponent": "+160",
-        "spread": "Ravens -3.5",
-        "total": 46.5,
-        "book": "DraftKings via statsniper.com (2026-10-05) \u2014 line has moved in from the 2026-10-02 snapshot (was -278/Ravens -6/49.5), likely reflecting the Gwyn/Pocic O-line injury news"
+        "ravens": "-140",
+        "opponent": "+120",
+        "spread": "Ravens -3",
+        "total": 45.5,
+        "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06) \u2014 line has drifted back toward Atlanta from the 2026-10-05 snapshot (was -192/+160, spread -3.5/46.5); range across books Ravens -119 to -154, spread -2.5 to -3"
       },
       "ravens_win_prob": 0.546,
       "model_odds": "-131",
       "value_bet": {
-        "market_implied_prob": 0.658,
+        "market_implied_prob": 0.583,
         "model_prob": 0.546,
-        "edge_pts": -0.112,
+        "edge_pts": -0.037,
         "read": "Model leans slightly more toward the opponent than the market does.",
         "large_disagreement": false
       }

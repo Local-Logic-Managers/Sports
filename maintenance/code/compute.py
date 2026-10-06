@@ -226,7 +226,11 @@ nfl_week1 = [(r["away"], r["home"], r["date"]) for r in read_csv("nfl_slate.csv"
 # so last run's Week 4 lines are retired. A game not in this dict just doesn't get a
 # market_odds/value_bet/blended_prob block attached -- populated opportunistically, not every fixture.
 NFL_MARKET_ODDS = {
-    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "+160", "away_ml": "-192", "book": "DraftKings via statsniper.com (2026-10-05)"},
+    # Line moved toward Atlanta since the 10-05 snapshot (Ravens -192/+160) --
+    # 10-06 median-of-books has Ravens as a smaller favorite, likely reflecting
+    # the Gwyn/Pocic O-line IR moves. Range across books: Ravens -119 to -154,
+    # Falcons +120 to +130, spread Ravens -2.5 to -3 (6 of 10 books at -3), total ~45-45.5.
+    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "+120", "away_ml": "-140", "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06)"},
 }
 
 nfl_games = []
@@ -264,7 +268,7 @@ mlb_slate = [(r["away"], r["home"], r["date"]) for r in read_csv("mlb_slate.csv"
 mlb_games = [build_game("mlb", a, h, d, mlb_ratings.get(h, 0), mlb_ratings.get(a, 0)) for a, h, d in mlb_slate]
 results["leagues"]["mlb"] = {
     "label": "MLB",
-    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway: Division Series are live as of Oct 5 (Rays lead Yankees 1-0, Game 2 tonight; White Sox lead Guardians 1-0, Game 2 tonight; Brewers lead Padres 2-0, one win from the sweep; Dodgers-Braves tied 1-1), after a Wild Card round that saw the White Sox post their first postseason series win in 20+ years. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway: Division Series as of Oct 6 (White Sox lead Guardians 2-0 after a Game 2 win, 4-3 — can clinch ALCS berth in Game 3; Rays lead Yankees 1-0 with Game 2 underway; Brewers lead Padres 2-0 and can close out the series in Game 3 tonight; Dodgers-Braves tied 1-1 with Game 3 tonight), after a Wild Card round that saw the White Sox post their first postseason series win in 20+ years. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
     "ratings": mlb_ratings, "games": mlb_games,
 }
 
@@ -281,6 +285,8 @@ for r in epl_rows:
 # in this dict; it's populated opportunistically, not every fixture.
 EPL_MARKET_ODDS = {
     ("Leeds United", "Arsenal"): {"home_win_prob": 0.671, "draw_prob": 0.206, "away_win_prob": 0.123, "book": "Bet365 via kickoff.co.uk (2026-10-04), vig removed"},
+    # Man City @ Liverpool, 2026-10-11: book treats it as a dead-even coin flip (both sides priced identically).
+    ("Manchester City", "Liverpool"): {"home_win_prob": 0.371, "draw_prob": 0.258, "away_win_prob": 0.371, "book": "betus.com.pa (2026-10-06), vig removed"},
 }
 
 epl_fixtures = [(r["away"], r["home"], r["date"]) for r in read_csv("epl_fixtures.csv")]

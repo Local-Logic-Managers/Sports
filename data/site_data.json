@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05",
+  "generated_at": "2026-10-06",
   "model_version": 1,
   "leagues": {
     "nfl": {
@@ -181,16 +181,16 @@
           "pick_prob": 0.53,
           "confidence": "Toss-up",
           "market_odds": {
-            "home_ml": "+160",
-            "away_ml": "-192",
-            "book": "DraftKings via statsniper.com (2026-10-05)"
+            "home_ml": "+120",
+            "away_ml": "-140",
+            "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06)"
           },
           "value_bet": {
-            "market_implied_prob": 0.369,
+            "market_implied_prob": 0.438,
             "model_prob": 0.53,
-            "edge_pts": 0.161,
-            "read": "Large disagreement with the market \u2014 more likely our simple model is missing context than a real edge over the book's pricing.",
-            "large_disagreement": true
+            "edge_pts": 0.092,
+            "read": "Model leans slightly more toward the home side than the market does.",
+            "large_disagreement": false
           }
         },
         {
@@ -207,7 +207,7 @@
     },
     "mlb": {
       "label": "MLB",
-      "status": "2026 regular season complete (ended Sept 27) \u2014 ratings above are final-season power ratings. Postseason underway: Division Series are live as of Oct 5 (Rays lead Yankees 1-0, Game 2 tonight; White Sox lead Guardians 1-0, Game 2 tonight; Brewers lead Padres 2-0, one win from the sweep; Dodgers-Braves tied 1-1), after a Wild Card round that saw the White Sox post their first postseason series win in 20+ years. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+      "status": "2026 regular season complete (ended Sept 27) \u2014 ratings above are final-season power ratings. Postseason underway: Division Series as of Oct 6 (White Sox lead Guardians 2-0 after a Game 2 win, 4-3 \u2014 can clinch ALCS berth in Game 3; Rays lead Yankees 1-0 with Game 2 underway; Brewers lead Padres 2-0 and can close out the series in Game 3 tonight; Dodgers-Braves tied 1-1 with Game 3 tonight), after a Wild Card round that saw the White Sox post their first postseason series win in 20+ years. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
       "ratings": {
         "Tampa Bay Rays": 0.473,
         "New York Yankees": 0.762,
@@ -361,7 +361,21 @@
           "home_win_prob": 0.476,
           "pick": "Manchester City",
           "pick_prob": 0.524,
-          "confidence": "Toss-up"
+          "confidence": "Toss-up",
+          "market_odds": {
+            "home_win_prob": 0.371,
+            "draw_prob": 0.258,
+            "away_win_prob": 0.371,
+            "book": "betus.com.pa (2026-10-06), vig removed"
+          },
+          "value_bet": {
+            "market_implied_prob": 0.371,
+            "model_prob": 0.476,
+            "edge_pts": 0.105,
+            "read": "Model leans slightly more toward the home side than the market does.",
+            "large_disagreement": false,
+            "note": "Market prob is a 3-way (home/draw/away) line; our model does not yet price a draw outcome, so this comparison is approximate."
+          }
         },
         {
           "away": "Newcastle United",
@@ -503,7 +517,7 @@
         {
           "away": "D.C. United",
           "home": "Inter Miami CF",
-          "date": "2026-10-11",
+          "date": "2026-10-10",
           "home_win_prob": 0.711,
           "pick": "Inter Miami CF",
           "pick_prob": 0.711,
@@ -649,9 +663,9 @@
   },
   "accuracy": {
     "team_sports": {
-      "n": 416,
-      "accuracy": 0.546,
-      "brier": 0.2432,
+      "n": 417,
+      "accuracy": 0.544,
+      "brier": 0.2433,
       "by_league": {
         "mlb": {
           "n": 246,
@@ -684,17 +698,17 @@
           "brier": 0.0009
         },
         "nfl": {
-          "n": 68,
+          "n": 69,
           "correct": 36,
-          "accuracy": 0.529,
-          "brier": 0.2484
+          "accuracy": 0.522,
+          "brier": 0.2492
         }
       },
       "by_confidence": {
         "Toss-up": {
-          "n": 119,
+          "n": 120,
           "correct": 61,
-          "accuracy": 0.513,
+          "accuracy": 0.508,
           "avg_predicted_prob": 0.526
         },
         "Moderate": {
@@ -717,16 +731,16 @@
         }
       },
       "home_vs_away_pick": {
-        "home_picks": 272,
-        "home_pick_accuracy": 0.559,
+        "home_picks": 273,
+        "home_pick_accuracy": 0.557,
         "away_picks": 144,
         "away_pick_accuracy": 0.521
       },
       "big_favorite_vs_close": {
         "big_favorite_n": 106,
         "big_favorite_accuracy": 0.651,
-        "close_call_n": 310,
-        "close_call_accuracy": 0.51
+        "close_call_n": 311,
+        "close_call_accuracy": 0.508
       }
     },
     "horse_racing": {
@@ -4078,6 +4092,14 @@
         "matchup": "Detroit Lions @ Carolina Panthers",
         "pick": "Detroit Lions",
         "pick_prob": 0.695,
+        "correct": false
+      },
+      {
+        "date": "2026-10-05",
+        "league": "nfl",
+        "matchup": "Atlanta Falcons @ New Orleans Saints",
+        "pick": "New Orleans Saints",
+        "pick_prob": 0.549,
         "correct": false
       }
     ],
