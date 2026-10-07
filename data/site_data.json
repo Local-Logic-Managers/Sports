@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06",
+  "generated_at": "2026-10-07",
   "model_version": 1,
   "leagues": {
     "nfl": {
@@ -9,7 +9,7 @@
       "ratings": {
         "Arizona Cardinals": -12.5,
         "Atlanta Falcons": -2.9,
-        "Baltimore Ravens": -2.555,
+        "Baltimore Ravens": -5.355,
         "Buffalo Bills": 5.0,
         "Carolina Panthers": -5.5,
         "Chicago Bears": -0.3,
@@ -175,22 +175,22 @@
           "away": "Baltimore Ravens",
           "home": "Atlanta Falcons",
           "date": "2026-10-11",
-          "home_win_prob": 0.53,
+          "home_win_prob": 0.601,
           "model_version": 2,
           "pick": "Atlanta Falcons",
-          "pick_prob": 0.53,
-          "confidence": "Toss-up",
+          "pick_prob": 0.601,
+          "confidence": "Lean",
           "market_odds": {
             "home_ml": "+120",
             "away_ml": "-140",
-            "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06)"
+            "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06); re-checked 2026-10-07, scoresandstats.com unchanged at Ravens -154/+130 -- see note above on a conflicting unconfirmed signal"
           },
           "value_bet": {
             "market_implied_prob": 0.438,
-            "model_prob": 0.53,
-            "edge_pts": 0.092,
-            "read": "Model leans slightly more toward the home side than the market does.",
-            "large_disagreement": false
+            "model_prob": 0.601,
+            "edge_pts": 0.163,
+            "read": "Large disagreement with the market \u2014 more likely our simple model is missing context than a real edge over the book's pricing.",
+            "large_disagreement": true
           }
         },
         {
@@ -207,7 +207,7 @@
     },
     "mlb": {
       "label": "MLB",
-      "status": "2026 regular season complete (ended Sept 27) \u2014 ratings above are final-season power ratings. Postseason underway: Division Series as of Oct 6 (White Sox lead Guardians 2-0 after a Game 2 win, 4-3 \u2014 can clinch ALCS berth in Game 3; Rays lead Yankees 1-0 with Game 2 underway; Brewers lead Padres 2-0 and can close out the series in Game 3 tonight; Dodgers-Braves tied 1-1 with Game 3 tonight), after a Wild Card round that saw the White Sox post their first postseason series win in 20+ years. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+      "status": "2026 regular season complete (ended Sept 27) \u2014 ratings above are final-season power ratings. Postseason underway: Division Series as of Oct 7 (all four series have a potential series-clinching or elimination game tonight) \u2014 in the NLDS, the Dodgers lead the Braves 2-1 after a 3-1 Game 3 win on Oct 6 and can clinch an NLCS berth in Game 4 tonight, while the Brewers lead the Padres 2-1 after San Diego staved off elimination with a 4-3 Game 3 win on Oct 6, forcing a Game 4 tonight; in the ALDS, the White Sox lead the Guardians 2-0 and can complete a sweep to reach the ALCS in Game 3 tonight at Cleveland, and the Rays lead the Yankees 2-0 and can likewise sweep into the ALCS in Game 3 tonight at Yankee Stadium, an elimination game for New York \u2014 after a Wild Card round that saw the White Sox post their first postseason series win in 20+ years. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
       "ratings": {
         "Tampa Bay Rays": 0.473,
         "New York Yankees": 0.762,
@@ -277,15 +277,15 @@
           "pick_prob": 0.582,
           "confidence": "Lean",
           "market_odds": {
-            "home_win_prob": 0.671,
-            "draw_prob": 0.206,
-            "away_win_prob": 0.123,
-            "book": "Bet365 via kickoff.co.uk (2026-10-04), vig removed"
+            "home_win_prob": 0.684,
+            "draw_prob": 0.191,
+            "away_win_prob": 0.125,
+            "book": "DraftKings via gainblers.com (2026-10-07), vig removed; prior Bet365/kickoff.co.uk (2026-10-04) had 67.1/20.6/12.3"
           },
           "value_bet": {
-            "market_implied_prob": 0.671,
+            "market_implied_prob": 0.684,
             "model_prob": 0.582,
-            "edge_pts": -0.089,
+            "edge_pts": -0.102,
             "read": "Model leans slightly more toward the away side than the market does.",
             "large_disagreement": false,
             "note": "Market prob is a 3-way (home/draw/away) line; our model does not yet price a draw outcome, so this comparison is approximate."
@@ -366,7 +366,7 @@
             "home_win_prob": 0.371,
             "draw_prob": 0.258,
             "away_win_prob": 0.371,
-            "book": "betus.com.pa (2026-10-06), vig removed"
+            "book": "betus.com.pa (2026-10-06, re-checked 2026-10-07, unchanged), vig removed"
           },
           "value_bet": {
             "market_implied_prob": 0.371,

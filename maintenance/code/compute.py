@@ -101,12 +101,22 @@ NFL_INJURY_TURNOVER = {
     # Flowers (hamstring) both back to full practice participation / reporting healthy -- no
     # longer modeled. Everything else carried forward unchanged (no fresh Week 5 report had
     # dropped yet as of this refresh; official Wed/Thu practice reports still to come).
+    # 2026-10-07: new development since the 10-05 refresh -- Lamar Jackson suffered a LEFT ANKLE
+    # SPRAIN late in the Week 4 win over Tennessee (10/4, landed on by a defender), left in a
+    # protective boot, had an MRI Monday 10/6, and HC Jesse Minter was noncommittal on his Sunday
+    # status ("I really don't think it's going to be crazy long-term, but we'll see" -- 10/5
+    # quotes via Newsweek/Field Level Media). This supersedes last refresh's cleared "back" note --
+    # that was about the PRIOR week's issue; the ankle happened afterward, in-game. No Wednesday
+    # 10/7 practice-participation report had posted yet as of this refresh (checked multiple
+    # sources) -- modeled conservatively as questionable pending Thursday/Friday's official word;
+    # revisit once a real designation drops (backup Tyler Huntley would start if Jackson sits).
     "Baltimore Ravens": {
         "injuries": [
             {"pos": "C", "severity": "out"},              # Danny Pinter, out for the season
             {"pos": "WR", "severity": "out"},              # Ja'Kobi Lane, IR (wrist surgery), out for the season
             {"pos": "C", "severity": "out"},               # Jovaughn Gwyn, fractured fibula, IR, ~2-3 months
             {"pos": "C", "severity": "out"},               # Ethan Pocic, knee, placed on IR
+            {"pos": "QB", "severity": "questionable"},     # Lamar Jackson, NEW left ankle sprain (Week 4 game), no designation yet
             {"pos": "OT", "severity": "questionable"},     # Ronnie Stanley, toe, trending toward full participation
             {"pos": "OLB", "severity": "questionable"},    # Trey Hendrickson, finger (multi-fracture per reports)
             {"pos": "G", "severity": "questionable"},      # John Simpson, groin, limited
@@ -230,7 +240,13 @@ NFL_MARKET_ODDS = {
     # 10-06 median-of-books has Ravens as a smaller favorite, likely reflecting
     # the Gwyn/Pocic O-line IR moves. Range across books: Ravens -119 to -154,
     # Falcons +120 to +130, spread Ravens -2.5 to -3 (6 of 10 books at -3), total ~45-45.5.
-    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "+120", "away_ml": "-140", "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06)"},
+    # 2026-10-07 re-check: scoresandstats.com still has Ravens favored (-154/+130, spread -2.5
+    # to -3, total 45-45.5) -- essentially flat vs. 10-06. One other source (statsniper.com,
+    # undated) showed a conflicting flip to Falcons -3.5 favorite, plausibly tied to Lamar
+    # Jackson's new ankle-sprain uncertainty (see NFL_INJURY_TURNOVER) -- not used here pending a
+    # confirmed/dated line; keeping Ravens as the modeled favorite but this is worth rechecking
+    # once Thursday/Friday's official injury designation and fresh closing lines are out.
+    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "+120", "away_ml": "-140", "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06); re-checked 2026-10-07, scoresandstats.com unchanged at Ravens -154/+130 -- see note above on a conflicting unconfirmed signal"},
 }
 
 nfl_games = []
@@ -268,7 +284,7 @@ mlb_slate = [(r["away"], r["home"], r["date"]) for r in read_csv("mlb_slate.csv"
 mlb_games = [build_game("mlb", a, h, d, mlb_ratings.get(h, 0), mlb_ratings.get(a, 0)) for a, h, d in mlb_slate]
 results["leagues"]["mlb"] = {
     "label": "MLB",
-    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway: Division Series as of Oct 6 (White Sox lead Guardians 2-0 after a Game 2 win, 4-3 — can clinch ALCS berth in Game 3; Rays lead Yankees 1-0 with Game 2 underway; Brewers lead Padres 2-0 and can close out the series in Game 3 tonight; Dodgers-Braves tied 1-1 with Game 3 tonight), after a Wild Card round that saw the White Sox post their first postseason series win in 20+ years. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway: Division Series as of Oct 7 (all four series have a potential series-clinching or elimination game tonight) — in the NLDS, the Dodgers lead the Braves 2-1 after a 3-1 Game 3 win on Oct 6 and can clinch an NLCS berth in Game 4 tonight, while the Brewers lead the Padres 2-1 after San Diego staved off elimination with a 4-3 Game 3 win on Oct 6, forcing a Game 4 tonight; in the ALDS, the White Sox lead the Guardians 2-0 and can complete a sweep to reach the ALCS in Game 3 tonight at Cleveland, and the Rays lead the Yankees 2-0 and can likewise sweep into the ALCS in Game 3 tonight at Yankee Stadium, an elimination game for New York — after a Wild Card round that saw the White Sox post their first postseason series win in 20+ years. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
     "ratings": mlb_ratings, "games": mlb_games,
 }
 
@@ -284,9 +300,12 @@ for r in epl_rows:
 # consensus price (Covers.com) -- keyed by (away, home). Most EPL games won't be
 # in this dict; it's populated opportunistically, not every fixture.
 EPL_MARKET_ODDS = {
-    ("Leeds United", "Arsenal"): {"home_win_prob": 0.671, "draw_prob": 0.206, "away_win_prob": 0.123, "book": "Bet365 via kickoff.co.uk (2026-10-04), vig removed"},
+    # Updated 2026-10-07: DraftKings via gainblers.com (for the 2026-10-10 fixture) has Arsenal
+    # ticking up slightly from the 10-04 Bet365 line (67.1/20.6/12.3 -> 68.4/19.1/12.5).
+    ("Leeds United", "Arsenal"): {"home_win_prob": 0.684, "draw_prob": 0.191, "away_win_prob": 0.125, "book": "DraftKings via gainblers.com (2026-10-07), vig removed; prior Bet365/kickoff.co.uk (2026-10-04) had 67.1/20.6/12.3"},
     # Man City @ Liverpool, 2026-10-11: book treats it as a dead-even coin flip (both sides priced identically).
-    ("Manchester City", "Liverpool"): {"home_win_prob": 0.371, "draw_prob": 0.258, "away_win_prob": 0.371, "book": "betus.com.pa (2026-10-06), vig removed"},
+    # Re-checked 2026-10-07: betus.com.pa line unchanged (still dated 2026-10-05, same devigged numbers).
+    ("Manchester City", "Liverpool"): {"home_win_prob": 0.371, "draw_prob": 0.258, "away_win_prob": 0.371, "book": "betus.com.pa (2026-10-06, re-checked 2026-10-07, unchanged), vig removed"},
 }
 
 epl_fixtures = [(r["away"], r["home"], r["date"]) for r in read_csv("epl_fixtures.csv")]
