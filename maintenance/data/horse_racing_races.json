@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "race": "City of Hope Mile",
+    "grade": "G2",
+    "track": "Santa Anita Park",
+    "date": "2026-09-26",
+    "field": [
+      {"post": 1, "horse": "Teao", "jockey": "Paco Lopez", "trainer": "John W. Sadler", "ml_odds": "6-1"},
+      {"post": 2, "horse": "El Potente", "jockey": "Hector Isaac Berrios", "trainer": "Dan Blacker", "ml_odds": "9-5"},
+      {"post": 3, "horse": "Cabo Spirit", "jockey": "Mike E. Smith", "trainer": "George Papaprodromou", "ml_odds": "6-1"},
+      {"post": 4, "horse": "Detain", "jockey": "Juan J. Hernandez", "trainer": "Michael W. McCarthy", "ml_odds": "8-1"},
+      {"post": 5, "horse": "Irish Aces", "jockey": "Joel Rosario", "trainer": "Brendan P. Walsh", "ml_odds": "6-1"},
+      {"post": 6, "horse": "King of Gosford", "jockey": "Umberto Rispoli", "trainer": "Philip D'Amato", "ml_odds": "8-5"}
+    ]
+  }
+]
