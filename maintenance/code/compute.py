@@ -110,13 +110,21 @@ NFL_INJURY_TURNOVER = {
     # 10/7 practice-participation report had posted yet as of this refresh (checked multiple
     # sources) -- modeled conservatively as questionable pending Thursday/Friday's official word;
     # revisit once a real designation drops (backup Tyler Huntley would start if Jackson sits).
+    # 2026-10-08: refreshed off the Ravens' official Wednesday (10/7, 1:53pm ET) practice report
+    # ahead of Week 5 at Atlanta. Lamar Jackson (left ankle sprain) DID NOT PRACTICE -- still no
+    # game-status designation (Minter: status "evaluated during the week"); modeled conservatively
+    # as questionable, same as last refresh, pending Thu/Fri word. Durham Smythe (TE, Achilles) was
+    # placed on IR -- new, added below. Newly-appearing DNP/Limited names from the same report
+    # (Vorhees, Hamilton, Bateman, Chris Moore) are depth pieces not yet modeled with dedicated
+    # entries -- Stanley/Hendrickson/Simpson/Tampa/Campbell carried forward unchanged.
     "Baltimore Ravens": {
         "injuries": [
             {"pos": "C", "severity": "out"},              # Danny Pinter, out for the season
             {"pos": "WR", "severity": "out"},              # Ja'Kobi Lane, IR (wrist surgery), out for the season
             {"pos": "C", "severity": "out"},               # Jovaughn Gwyn, fractured fibula, IR, ~2-3 months
             {"pos": "C", "severity": "out"},               # Ethan Pocic, knee, placed on IR
-            {"pos": "QB", "severity": "questionable"},     # Lamar Jackson, NEW left ankle sprain (Week 4 game), no designation yet
+            {"pos": "TE", "severity": "out"},              # Durham Smythe, Achilles, placed on IR (new 2026-10-07)
+            {"pos": "QB", "severity": "questionable"},     # Lamar Jackson, left ankle sprain, DNP Wed 10/7, still no designation
             {"pos": "OT", "severity": "questionable"},     # Ronnie Stanley, toe, trending toward full participation
             {"pos": "OLB", "severity": "questionable"},    # Trey Hendrickson, finger (multi-fracture per reports)
             {"pos": "G", "severity": "questionable"},      # John Simpson, groin, limited
@@ -236,17 +244,14 @@ nfl_week1 = [(r["away"], r["home"], r["date"]) for r in read_csv("nfl_slate.csv"
 # so last run's Week 4 lines are retired. A game not in this dict just doesn't get a
 # market_odds/value_bet/blended_prob block attached -- populated opportunistically, not every fixture.
 NFL_MARKET_ODDS = {
-    # Line moved toward Atlanta since the 10-05 snapshot (Ravens -192/+160) --
-    # 10-06 median-of-books has Ravens as a smaller favorite, likely reflecting
-    # the Gwyn/Pocic O-line IR moves. Range across books: Ravens -119 to -154,
-    # Falcons +120 to +130, spread Ravens -2.5 to -3 (6 of 10 books at -3), total ~45-45.5.
-    # 2026-10-07 re-check: scoresandstats.com still has Ravens favored (-154/+130, spread -2.5
-    # to -3, total 45-45.5) -- essentially flat vs. 10-06. One other source (statsniper.com,
-    # undated) showed a conflicting flip to Falcons -3.5 favorite, plausibly tied to Lamar
-    # Jackson's new ankle-sprain uncertainty (see NFL_INJURY_TURNOVER) -- not used here pending a
-    # confirmed/dated line; keeping Ravens as the modeled favorite but this is worth rechecking
-    # once Thursday/Friday's official injury designation and fresh closing lines are out.
-    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "+120", "away_ml": "-140", "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06); re-checked 2026-10-07, scoresandstats.com unchanged at Ravens -154/+130 -- see note above on a conflicting unconfirmed signal"},
+    # 2026-10-08: the line has FLIPPED to Atlanta as favorite -- the conflicting signal flagged in
+    # the 10-07 note is now confirmed. Dimers.com (2026-10-07, 7:38pm ET): Falcons -163 ML / Ravens
+    # +156, spread Falcons -3.5, total 43.5. Cross-checked vs. statsniper.com (undated, consistent
+    # range): Falcons -175 / Ravens +145, same spread/total. This move tracks Lamar Jackson's
+    # continued absence from practice (DNP again Wed 10/7) with still no official game designation --
+    # see NFL_INJURY_TURNOVER. Prior to this, Ravens had been favored since the opening lookahead
+    # line; this is the first flip of the week.
+    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "-163", "away_ml": "+156", "book": "Dimers.com (2026-10-07, 7:38pm ET); cross-checked vs. statsniper.com (Falcons -175/Ravens +145, undated, same range) -- line flipped to Atlanta favorite since the 10-06/10-07 snapshots"},
 }
 
 nfl_games = []

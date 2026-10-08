@@ -1,11 +1,11 @@
 {
   "team": "Baltimore Ravens",
-  "as_of": "2026-10-07",
+  "as_of": "2026-10-08",
   "record": {
     "w": 3,
     "l": 1,
     "t": 0,
-    "note": "3-1 under HC Jesse Minter after beating the Tennessee Titans 24-18 at home (2026-10-04). Next up: Week 5 on the road at the Atlanta Falcons (2026-10-11, SNF), where Baltimore is still favored (scoresandstats.com, re-checked 2026-10-07: Ravens -154, spread -2.5 to -3, essentially flat since 10-06 \u2014 was -192/-3.5 on 10-05). The headline swing factor this week is QB Lamar Jackson's new left ankle sprain from the Week 4 game, still without an official game-status designation as of this refresh \u2014 see roster notes; official injury reports for this game aren't out until Friday 10-09."
+    "note": "3-1 under HC Jesse Minter after beating the Tennessee Titans 24-18 at home (2026-10-04). Next up: Week 5 on the road at the Atlanta Falcons (2026-10-11, SNF) \u2014 the market line FLIPPED to Atlanta favored as of the 2026-10-07 7:38pm ET Dimers.com line (Falcons -163/Ravens +156, spread Falcons -3.5, total 43.5; statsniper.com consistent at -175/+145), reversing Baltimore's earlier-week favorite status. The swing factor remains QB Lamar Jackson's left ankle sprain from the Week 4 game \u2014 he did not practice again Wednesday 10/7 and still has no official game-status designation as of this refresh; the Ravens' official injury report that day also placed TE Durham Smythe (Achilles) on IR. Official Friday (10-09) designations will be the next real signal."
   },
   "coaching_change": {
     "headline": "New head coach for 2026: Jesse Minter (4th HC in franchise history), replacing John Harbaugh after 18 seasons.",
@@ -23,7 +23,8 @@
       "Updated 2026-09-30: Ravens beat the Cowboys 34-31 in Rio de Janeiro (2026-09-27) to improve to 2-1; Ronnie Stanley (toe) was ruled out and rookie Carson Vinson made his first career start at left tackle, while Nnamdi Madubuike, Zay Flowers, and Teddye Buchanan were full-strength participants. No new post-game injury or transaction news has surfaced as of today; a formal Week 4 injury report (vs. Tennessee Titans, 2026-10-04) had not yet been published as of this refresh \u2014 those typically post Wed/Thu of game week.",
       "Updated 2026-10-02 (Wed/Thu Week 4 practice reports ahead of Sunday's game vs. Tennessee Titans): Lamar Jackson appeared on the injury report with a back issue, limited Wednesday but full Thursday \u2014 HC Jesse Minter called it \"minor,\" no game designation attached, expected to play. Zay Flowers (hamstring) and Marlon Humphrey (hamstring) both upgraded to full practice Thursday and are trending to play. Nnamdi Madubuike (neck) and Teddye Buchanan (knee) are off the injury report entirely \u2014 appear fully healthy. Ronnie Stanley (toe) remained limited both days, still not a full clearance. New/notable: center Jovaughn Gwyn is reportedly facing a multi-week absence (a fractured fibula per one report), and primary backup center Ethan Pocic (knee) did not practice either day \u2014 a concern given Danny Pinter is already out for the season at that position. Trey Hendrickson (OLB) did not practice with a reported multi-fracture finger injury, pending a Friday status call. No official Friday (final) game-status designations had posted as of this refresh \u2014 only Wed/Thu practice-participation data was available. Sourcing: Yahoo Sports, RoundTable.io, ClutchPoints, SharpFootballAnalysis roundup (all dated 2026-10-01/02); treat as moderate confidence pending the final injury report.",
       "Updated 2026-10-04 (official Friday injury report, via baltimoreravens.com, ahead of today's 1:00pm ET kickoff vs. Tennessee Titans): Lamar Jackson (back) and Marlon Humphrey (hamstring) both logged full practice all week and carry no game designation \u2014 cleared to play. Zay Flowers (hamstring) and Ronnie Stanley (toe) are QUESTIONABLE (Flowers was limited Friday after two full days; Stanley did not practice Friday after two limited days). Trey Hendrickson (OLB, finger) and Ethan Pocic (C, knee) are both OUT after DNP all three practice days. Center Jovaughn Gwyn is also OUT, now listed on the official report with an ankle designation (differs from the earlier-reported fractured-fibula characterization \u2014 treat the exact injury detail as unconfirmed, but the practical out-this-week status is consistent across sources). Official inactives list had not yet posted as of this refresh (standard ~90 minutes before kickoff).",
-      "Updated 2026-10-07: new development since the win over Tennessee \u2014 Lamar Jackson suffered a LEFT ANKLE SPRAIN late in that game (10/4) when a Titans defender landed on him; he left in a protective boot, had an MRI Monday 10/6, and HC Jesse Minter was noncommittal on his status for Sunday's game at Atlanta: \"I really don't think it's going to be crazy long-term, but we'll see what happens\" (quotes via Newsweek, Field Level Media). Backup Tyler Huntley (8/9 for 63 yds in relief vs. Tennessee) would start if Jackson sits. No Wednesday practice-participation report had posted as of this refresh (checked multiple sources) \u2014 the official word is expected Thursday/Friday. Everything else (Gwyn/Pocic on IR, Vega Ioane at center, Hendrickson's finger, Flowers' hamstring) is unchanged from the 10-05 update."
+      "Updated 2026-10-07: new development since the win over Tennessee \u2014 Lamar Jackson suffered a LEFT ANKLE SPRAIN late in that game (10/4) when a Titans defender landed on him; he left in a protective boot, had an MRI Monday 10/6, and HC Jesse Minter was noncommittal on his status for Sunday's game at Atlanta: \"I really don't think it's going to be crazy long-term, but we'll see what happens\" (quotes via Newsweek, Field Level Media). Backup Tyler Huntley (8/9 for 63 yds in relief vs. Tennessee) would start if Jackson sits. No Wednesday practice-participation report had posted as of this refresh (checked multiple sources) \u2014 the official word is expected Thursday/Friday. Everything else (Gwyn/Pocic on IR, Vega Ioane at center, Hendrickson's finger, Flowers' hamstring) is unchanged from the 10-05 update.",
+      "Updated 2026-10-08 (official Wednesday 10/7, 1:53pm ET practice report, via baltimoreravens.com): Lamar Jackson (left ankle sprain) DID NOT PRACTICE; HC Jesse Minter said his Sunday availability will be \"evaluated during the week\" \u2014 still no game-status designation, with Thursday/Friday reports the next real signal (backup Tyler Huntley would start if Jackson sits). Also DNP Wednesday: Marlon Humphrey (hamstring/calf), Ronnie Stanley (rest/toe/ankle), Trey Hendrickson (finger, post-procedure), Calais Campbell (rest), Andrew Vorhees (foot). Limited: Kyle Hamilton (groin), John Simpson (groin), Zay Flowers (foot), Rashod Bateman (shoulder), Chris Moore (ankle). Roster move: TE Durham Smythe placed on IR (Achilles) \u2014 new. Market line flipped to Atlanta favored this refresh (see record note) \u2014 plausibly tied to Jackson's continued absence from practice."
     ]
   },
   "roster_changes": {
@@ -652,20 +653,20 @@
       "date": "2026-10-11",
       "neutral": false,
       "market_odds": {
-        "ravens": "-140",
-        "opponent": "+120",
-        "spread": "Ravens -3",
-        "total": 45.5,
-        "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06) \u2014 line has drifted back toward Atlanta from the 2026-10-05 snapshot (was -192/+160, spread -3.5/46.5); range across books Ravens -119 to -154, spread -2.5 to -3. Re-checked 2026-10-07: scoresandstats.com unchanged (Ravens -154/+130, spread -2.5 to -3, total 45-45.5). One other source (statsniper.com, undated) showed a conflicting flip to Falcons -3.5 favorite, plausibly tied to Lamar Jackson's new ankle-sprain uncertainty (see ravens-data.json roster notes) \u2014 not used here pending a confirmed/dated line; recheck once Thursday/Friday's official injury designation and fresh closing lines are out."
+        "ravens": "+156",
+        "opponent": "-163",
+        "spread": "Falcons -3.5",
+        "total": 43.5,
+        "book": "Dimers.com (2026-10-07, 7:38pm ET); cross-checked vs. statsniper.com (Falcons -175/Ravens +145, undated, same range) \u2014 the line has FLIPPED to Atlanta favored since the 2026-10-06/10-07 snapshots (was Ravens -154/+130, spread -2.5 to -3), confirming the conflicting signal noted in the prior refresh. Tracks Lamar Jackson's continued absence from practice (DNP again Wed 10/7) with still no official game designation \u2014 see ravens-data.json roster notes."
       },
       "ravens_win_prob": 0.546,
       "model_odds": "-131",
       "value_bet": {
-        "market_implied_prob": 0.583,
+        "market_implied_prob": 0.391,
         "model_prob": 0.546,
-        "edge_pts": -0.037,
-        "read": "Model leans slightly more toward the opponent than the market does.",
-        "large_disagreement": false
+        "edge_pts": 0.155,
+        "read": "Large disagreement with the market \u2014 more likely our simple model is missing context (injuries, coaching change, roster turnover) than a real edge over Vegas's pricing.",
+        "large_disagreement": true
       }
     },
     {

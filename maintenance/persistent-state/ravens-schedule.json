@@ -63,11 +63,11 @@
     "date": "2026-10-11",
     "neutral": false,
     "market_odds": {
-      "ravens": "-140",
-      "opponent": "+120",
-      "spread": "Ravens -3",
-      "total": 45.5,
-      "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06) — line has drifted back toward Atlanta from the 2026-10-05 snapshot (was -192/+160, spread -3.5/46.5); range across books Ravens -119 to -154, spread -2.5 to -3. Re-checked 2026-10-07: scoresandstats.com unchanged (Ravens -154/+130, spread -2.5 to -3, total 45-45.5). One other source (statsniper.com, undated) showed a conflicting flip to Falcons -3.5 favorite, plausibly tied to Lamar Jackson's new ankle-sprain uncertainty (see ravens-data.json roster notes) — not used here pending a confirmed/dated line; recheck once Thursday/Friday's official injury designation and fresh closing lines are out."
+      "ravens": "+156",
+      "opponent": "-163",
+      "spread": "Falcons -3.5",
+      "total": 43.5,
+      "book": "Dimers.com (2026-10-07, 7:38pm ET); cross-checked vs. statsniper.com (Falcons -175/Ravens +145, undated, same range) — the line has FLIPPED to Atlanta favored since the 2026-10-06/10-07 snapshots (was Ravens -154/+130, spread -2.5 to -3), confirming the conflicting signal noted in the prior refresh. Tracks Lamar Jackson's continued absence from practice (DNP again Wed 10/7) with still no official game designation — see ravens-data.json roster notes."
     }
   },
   {

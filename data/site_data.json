@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07",
+  "generated_at": "2026-10-08",
   "model_version": 1,
   "leagues": {
     "nfl": {
@@ -9,7 +9,7 @@
       "ratings": {
         "Arizona Cardinals": -12.5,
         "Atlanta Falcons": -2.9,
-        "Baltimore Ravens": -5.355,
+        "Baltimore Ravens": -6.355,
         "Buffalo Bills": 5.0,
         "Carolina Panthers": -5.5,
         "Chicago Bears": -0.3,
@@ -175,22 +175,22 @@
           "away": "Baltimore Ravens",
           "home": "Atlanta Falcons",
           "date": "2026-10-11",
-          "home_win_prob": 0.601,
+          "home_win_prob": 0.625,
           "model_version": 2,
           "pick": "Atlanta Falcons",
-          "pick_prob": 0.601,
+          "pick_prob": 0.625,
           "confidence": "Lean",
           "market_odds": {
-            "home_ml": "+120",
-            "away_ml": "-140",
-            "book": "Median of books via statsniper.com/scoresandstats.com/bettoredge.com (2026-10-06); re-checked 2026-10-07, scoresandstats.com unchanged at Ravens -154/+130 -- see note above on a conflicting unconfirmed signal"
+            "home_ml": "-163",
+            "away_ml": "+156",
+            "book": "Dimers.com (2026-10-07, 7:38pm ET); cross-checked vs. statsniper.com (Falcons -175/Ravens +145, undated, same range) -- line flipped to Atlanta favorite since the 10-06/10-07 snapshots"
           },
           "value_bet": {
-            "market_implied_prob": 0.438,
-            "model_prob": 0.601,
-            "edge_pts": 0.163,
-            "read": "Large disagreement with the market \u2014 more likely our simple model is missing context than a real edge over the book's pricing.",
-            "large_disagreement": true
+            "market_implied_prob": 0.613,
+            "model_prob": 0.625,
+            "edge_pts": 0.012,
+            "read": "Model roughly agrees with the market.",
+            "large_disagreement": false
           }
         },
         {
@@ -393,7 +393,7 @@
       "status": "in season",
       "ratings": {
         "Nashville SC": 1.03,
-        "Vancouver Whitecaps": 1.031,
+        "Vancouver Whitecaps": 0.939,
         "St. Louis City SC": 0.364,
         "FC Dallas": 0.242,
         "New England Revolution": 0.273,
@@ -401,7 +401,7 @@
         "San Jose Earthquakes": 0.303,
         "Houston Dynamo": 0.061,
         "Charlotte FC": 0.273,
-        "Chicago Fire": 0.25,
+        "Chicago Fire": 0.303,
         "LAFC": 0.382,
         "Philadelphia Union": 0.303,
         "Seattle Sounders FC": 0.0,
@@ -428,9 +428,9 @@
           "away": "New York City FC",
           "home": "Chicago Fire",
           "date": "2026-10-10",
-          "home_win_prob": 0.59,
+          "home_win_prob": 0.602,
           "pick": "Chicago Fire",
-          "pick_prob": 0.59,
+          "pick_prob": 0.602,
           "confidence": "Lean"
         },
         {
@@ -455,9 +455,9 @@
           "away": "Vancouver Whitecaps",
           "home": "LAFC",
           "date": "2026-10-10",
-          "home_win_prob": 0.421,
+          "home_win_prob": 0.442,
           "pick": "Vancouver Whitecaps",
-          "pick_prob": 0.579,
+          "pick_prob": 0.558,
           "confidence": "Lean"
         },
         {
