@@ -416,22 +416,6 @@
     "graded": false
   },
   {
-    "id": "nfl-2026-10-08-tampabaybuccaneers-dallascowboys",
-    "league": "nfl",
-    "sport_label": "NFL",
-    "date": "2026-10-08",
-    "away": "Tampa Bay Buccaneers",
-    "home": "Dallas Cowboys",
-    "home_win_prob": 0.476,
-    "pick": "Tampa Bay Buccaneers",
-    "pick_prob": 0.524,
-    "confidence": "Toss-up",
-    "note": null,
-    "model_version": 2,
-    "logged_at": "2026-10-05",
-    "graded": false
-  },
-  {
     "id": "nfl-2026-10-11-philadelphiaeagles-jacksonvillejaguars",
     "league": "nfl",
     "sport_label": "NFL",
@@ -653,6 +637,21 @@
     "note": null,
     "model_version": 2,
     "logged_at": "2026-10-05",
+    "graded": false
+  },
+  {
+    "id": "horse-2026-10-10-queenelizabethiichallengecuppresentedbydixiana",
+    "league": "horse_racing",
+    "sport_label": "Horse Racing",
+    "date": "2026-10-10",
+    "race": "Queen Elizabeth II Challenge Cup Presented by Dixiana",
+    "grade": "G1",
+    "track": "Keeneland Race Course",
+    "pick": "Luster",
+    "pick_prob": 0.2244,
+    "confidence": "Moderate favorite",
+    "field_size": 11,
+    "logged_at": "2026-10-09",
     "graded": false
   }
 ]

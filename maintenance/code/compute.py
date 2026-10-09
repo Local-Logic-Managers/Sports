@@ -117,18 +117,26 @@ NFL_INJURY_TURNOVER = {
     # placed on IR -- new, added below. Newly-appearing DNP/Limited names from the same report
     # (Vorhees, Hamilton, Bateman, Chris Moore) are depth pieces not yet modeled with dedicated
     # entries -- Stanley/Hendrickson/Simpson/Tampa/Campbell carried forward unchanged.
+    # 2026-10-09: refreshed off Thu 10/8 reporting (baltimoreravens.com, Newsweek, FantasyPros,
+    # ClutchPoints). Lamar Jackson DNP again Thursday, still no official designation -- multiple
+    # outlets now describe him as a "long-shot" to play; kept as questionable pending Fri word (no
+    # fresher source available at refresh time). Ronnie Stanley (toe) returned to FULL practice --
+    # removed. Zay Flowers (foot) has been limited multiple straight days -- re-added as
+    # questionable (supersedes the 10-05 note that he'd been upgraded to full; that was about a
+    # different week's designation). Hendrickson/Simpson/Tampa carried forward unchanged (no fresher
+    # word on them specifically this refresh).
     "Baltimore Ravens": {
         "injuries": [
             {"pos": "C", "severity": "out"},              # Danny Pinter, out for the season
             {"pos": "WR", "severity": "out"},              # Ja'Kobi Lane, IR (wrist surgery), out for the season
             {"pos": "C", "severity": "out"},               # Jovaughn Gwyn, fractured fibula, IR, ~2-3 months
             {"pos": "C", "severity": "out"},               # Ethan Pocic, knee, placed on IR
-            {"pos": "TE", "severity": "out"},              # Durham Smythe, Achilles, placed on IR (new 2026-10-07)
-            {"pos": "QB", "severity": "questionable"},     # Lamar Jackson, left ankle sprain, DNP Wed 10/7, still no designation
-            {"pos": "OT", "severity": "questionable"},     # Ronnie Stanley, toe, trending toward full participation
+            {"pos": "TE", "severity": "out"},              # Durham Smythe, Achilles, placed on IR (2026-10-07)
+            {"pos": "QB", "severity": "questionable"},     # Lamar Jackson, left ankle sprain, DNP Wed+Thu, still no designation as of 10/8-9
             {"pos": "OLB", "severity": "questionable"},    # Trey Hendrickson, finger (multi-fracture per reports)
             {"pos": "G", "severity": "questionable"},      # John Simpson, groin, limited
             {"pos": "CB", "severity": "questionable"},     # T.J. Tampa, knee, no fresh update carried forward
+            {"pos": "WR", "severity": "questionable"},     # Zay Flowers, foot, limited multiple straight days (re-added 2026-10-09)
         ],
         "departures": ["TE", "FB", "OT", "P", "S", "CB", "OLB", "WR"],  # Likely, Ricard, Faalele, Stout, Washington, Alexander, Oweh, C.Johnson
         "acquisitions": ["OLB", "S", "CB", "LB", "ILB"],                 # D.Jones, Gilman, White, Hendrickson, Barrett
@@ -172,14 +180,12 @@ NFL_INJURY_TURNOVER = {
     # entering the currently-tracked Week 3 slate.
     "Chicago Bears": {
         "injuries": [
-            {"pos": "QB", "severity": "questionable"},  # Caleb Williams, hamstring strain, week-to-week per HC Ben Johnson
+            {"pos": "QB", "severity": "out"},  # Caleb Williams, hamstring strain -- confirmed INACTIVE for Week 5 vs. Packers (Tyson Bagent starting), updated 2026-10-09
         ],
     },
-    "Washington Commanders": {
-        "injuries": [
-            {"pos": "QB", "severity": "out"},  # Jayden Daniels, left elbow dislocation
-        ],
-    },
+    # 2026-10-09: Jayden Daniels is now confirmed STARTING (elbow has recovered enough) -- removed
+    # his "out" entry. Backup Marcus Mariota has an MCL sprain but that's a depth-chart injury with
+    # no starter-level impact, so Washington reverts to no sourced injury adjustment this refresh.
     "Philadelphia Eagles": {
         "injuries": [
             {"pos": "TE", "severity": "out"},           # Dallas Goedert, right knee
@@ -220,6 +226,40 @@ NFL_INJURY_TURNOVER = {
             {"pos": "ILB", "severity": "questionable"},  # Jaishawn Barham, stinger
         ],
     },
+    # 2026-10-09 additions (fantasyalarm.com + clutchpoints.com Week 5 injury roundups, both
+    # dated 2026-10-06) -- new teams entering the tracked set this refresh.
+    "Green Bay Packers": {
+        "injuries": [
+            {"pos": "OLB", "severity": "out"},  # Edgerrin Cooper, torn Achilles, out for season
+        ],
+    },
+    "Arizona Cardinals": {
+        "injuries": [
+            {"pos": "OT", "severity": "out"},  # Paris Johnson Jr., bicep, out for rest of season
+        ],
+    },
+    "Cincinnati Bengals": {
+        "injuries": [
+            {"pos": "WR", "severity": "questionable"},  # Ja'Marr Chase, concussion protocol, uncertain
+            {"pos": "WR", "severity": "questionable"},  # Tee Higgins, adductor, day-to-day
+            {"pos": "WR", "severity": "out"},           # Andrei Iosivas, placed on IR
+        ],
+    },
+    "Buffalo Bills": {
+        "injuries": [
+            {"pos": "WR", "severity": "questionable"},  # DJ Moore, shoulder, trending doubtful
+        ],
+    },
+    "Indianapolis Colts": {
+        "injuries": [
+            {"pos": "WR", "severity": "questionable"},  # Keenan Allen, groin, uncertain, missed practice
+        ],
+    },
+    "Los Angeles Chargers": {
+        "injuries": [
+            {"pos": "WR", "severity": "questionable"},  # Ladd McConkey, foot re-aggravation, status murky
+        ],
+    },
 }
 
 nfl_ratings = {}
@@ -244,14 +284,12 @@ nfl_week1 = [(r["away"], r["home"], r["date"]) for r in read_csv("nfl_slate.csv"
 # so last run's Week 4 lines are retired. A game not in this dict just doesn't get a
 # market_odds/value_bet/blended_prob block attached -- populated opportunistically, not every fixture.
 NFL_MARKET_ODDS = {
-    # 2026-10-08: the line has FLIPPED to Atlanta as favorite -- the conflicting signal flagged in
-    # the 10-07 note is now confirmed. Dimers.com (2026-10-07, 7:38pm ET): Falcons -163 ML / Ravens
-    # +156, spread Falcons -3.5, total 43.5. Cross-checked vs. statsniper.com (undated, consistent
-    # range): Falcons -175 / Ravens +145, same spread/total. This move tracks Lamar Jackson's
-    # continued absence from practice (DNP again Wed 10/7) with still no official game designation --
-    # see NFL_INJURY_TURNOVER. Prior to this, Ravens had been favored since the opening lookahead
-    # line; this is the first flip of the week.
-    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "-163", "away_ml": "+156", "book": "Dimers.com (2026-10-07, 7:38pm ET); cross-checked vs. statsniper.com (Falcons -175/Ravens +145, undated, same range) -- line flipped to Atlanta favorite since the 10-06/10-07 snapshots"},
+    # 2026-10-09: line essentially held steady vs. the 10-07 flip (within normal book variance).
+    # Dimers.com (2026-10-08, 12:38pm ET): Falcons -160 ML / Ravens +156, spread Falcons -3.5 (+108)
+    # / Ravens +3.5 (-113), total 43.5. Cross-checked vs. FanDuel (2026-10-07): Falcons -172 / Ravens
+    # +144, spread Falcons -3.5, total 43.5. Continues to track Lamar Jackson's ongoing absence from
+    # practice (DNP again Thu 10/8) with still no official game-status designation.
+    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "-160", "away_ml": "+156", "book": "Dimers.com (2026-10-08, 12:38pm ET); cross-checked vs. FanDuel (2026-10-07, Falcons -172/Ravens +144) -- essentially unchanged from the 10-06/10-07 flip to Atlanta favorite"},
 }
 
 nfl_games = []
@@ -271,7 +309,7 @@ for a, h, d in nfl_week1:
     nfl_games.append(g)
 results["leagues"]["nfl"] = {
     "label": "NFL",
-    "status": "v2 ratings (win-total baseline + injury/turnover/regime-change adjustments) — Weeks 1-4 complete; Week 5 slate below (Oct 8-12)",
+    "status": "v2 ratings (win-total baseline + injury/turnover/regime-change adjustments) — Weeks 1-4 complete; Week 5 underway (Thu 10/8 Buccaneers @ Cowboys final, graded) — remaining Week 5 slate below (Oct 11-12)",
     "model_version": 2,
     "ratings": nfl_ratings, "games": nfl_games,
 }
@@ -289,7 +327,7 @@ mlb_slate = [(r["away"], r["home"], r["date"]) for r in read_csv("mlb_slate.csv"
 mlb_games = [build_game("mlb", a, h, d, mlb_ratings.get(h, 0), mlb_ratings.get(a, 0)) for a, h, d in mlb_slate]
 results["leagues"]["mlb"] = {
     "label": "MLB",
-    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway: Division Series as of Oct 7 (all four series have a potential series-clinching or elimination game tonight) — in the NLDS, the Dodgers lead the Braves 2-1 after a 3-1 Game 3 win on Oct 6 and can clinch an NLCS berth in Game 4 tonight, while the Brewers lead the Padres 2-1 after San Diego staved off elimination with a 4-3 Game 3 win on Oct 6, forcing a Game 4 tonight; in the ALDS, the White Sox lead the Guardians 2-0 and can complete a sweep to reach the ALCS in Game 3 tonight at Cleveland, and the Rays lead the Yankees 2-0 and can likewise sweep into the ALCS in Game 3 tonight at Yankee Stadium, an elimination game for New York — after a Wild Card round that saw the White Sox post their first postseason series win in 20+ years. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway: last reliably confirmed as of Oct 7 — NLDS: Dodgers led Braves 2-1 (after a 3-1 Game 3 win Oct 6), Brewers led Padres 2-1 (after San Diego's 4-3 Game 3 win Oct 6 forced a Game 4); ALDS: White Sox led Guardians 2-0, Rays led Yankees 2-0, each with a potential clinching game that night. Series results since Oct 7 could not be independently verified this refresh (search returned contaminated/stale recaps from past seasons) — check a live scoreboard for the latest before relying on this status. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
     "ratings": mlb_ratings, "games": mlb_games,
 }
 

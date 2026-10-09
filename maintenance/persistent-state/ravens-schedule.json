@@ -64,10 +64,10 @@
     "neutral": false,
     "market_odds": {
       "ravens": "+156",
-      "opponent": "-163",
+      "opponent": "-160",
       "spread": "Falcons -3.5",
       "total": 43.5,
-      "book": "Dimers.com (2026-10-07, 7:38pm ET); cross-checked vs. statsniper.com (Falcons -175/Ravens +145, undated, same range) — the line has FLIPPED to Atlanta favored since the 2026-10-06/10-07 snapshots (was Ravens -154/+130, spread -2.5 to -3), confirming the conflicting signal noted in the prior refresh. Tracks Lamar Jackson's continued absence from practice (DNP again Wed 10/7) with still no official game designation — see ravens-data.json roster notes."
+      "book": "Dimers.com (2026-10-08, 12:38pm ET); cross-checked vs. FanDuel (2026-10-07, Falcons -172/Ravens +144) — essentially unchanged from the 10-06/10-07 flip to Atlanta favored. Tracks Lamar Jackson's continued absence from practice (DNP again Thu 10/8) with still no official game designation — see ravens-data.json roster notes."
     }
   },
   {

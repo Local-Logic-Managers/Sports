@@ -1,16 +1,21 @@
 [
   {
-    "race": "City of Hope Mile",
-    "grade": "G2",
-    "track": "Santa Anita Park",
-    "date": "2026-09-26",
+    "race": "Queen Elizabeth II Challenge Cup Presented by Dixiana",
+    "grade": "G1",
+    "track": "Keeneland Race Course",
+    "date": "2026-10-10",
     "field": [
-      {"post": 1, "horse": "Teao", "jockey": "Paco Lopez", "trainer": "John W. Sadler", "ml_odds": "6-1"},
-      {"post": 2, "horse": "El Potente", "jockey": "Hector Isaac Berrios", "trainer": "Dan Blacker", "ml_odds": "9-5"},
-      {"post": 3, "horse": "Cabo Spirit", "jockey": "Mike E. Smith", "trainer": "George Papaprodromou", "ml_odds": "6-1"},
-      {"post": 4, "horse": "Detain", "jockey": "Juan J. Hernandez", "trainer": "Michael W. McCarthy", "ml_odds": "8-1"},
-      {"post": 5, "horse": "Irish Aces", "jockey": "Joel Rosario", "trainer": "Brendan P. Walsh", "ml_odds": "6-1"},
-      {"post": 6, "horse": "King of Gosford", "jockey": "Umberto Rispoli", "trainer": "Philip D'Amato", "ml_odds": "8-5"}
+      {"post": 1, "horse": "Haute Diva", "jockey": "Keith Asmussen", "trainer": "Patrick Biancone", "ml_odds": "30-1"},
+      {"post": 2, "horse": "Luster", "jockey": "John Velazquez", "trainer": "Josie Carroll", "ml_odds": "5-2"},
+      {"post": 3, "horse": "Tam Tam", "jockey": "Junior Alvarado", "trainer": "Phil Bauer", "ml_odds": "4-1"},
+      {"post": 4, "horse": "Faithful Departed", "jockey": "Jose Ortiz", "trainer": "Grant Forster", "ml_odds": "7-2"},
+      {"post": 5, "horse": "Turner's Charm", "jockey": "Ben Curtis", "trainer": "Brendan Walsh", "ml_odds": "20-1"},
+      {"post": 6, "horse": "Braida", "jockey": "Vincent Cheminaud", "trainer": "Francis-Henri Graffard", "ml_odds": "8-1"},
+      {"post": 7, "horse": "Storm's Wake", "jockey": "Tyler Gaffalione", "trainer": "Brian Lynch", "ml_odds": "10-1"},
+      {"post": 8, "horse": "Lookin At Diamond", "jockey": "Julien Leparoux", "trainer": "Leonard Powell", "ml_odds": "20-1"},
+      {"post": 9, "horse": "Kensington Lane", "jockey": "Joel Rosario", "trainer": "Phil D'Amato", "ml_odds": "8-1"},
+      {"post": 10, "horse": "Deep Learning", "jockey": "Flavien Prat", "trainer": "Chad Brown", "ml_odds": "12-1"},
+      {"post": 11, "horse": "Soloist", "jockey": "Irad Ortiz Jr.", "trainer": "Ken McPeek", "ml_odds": "20-1"}
     ]
   }
 ]

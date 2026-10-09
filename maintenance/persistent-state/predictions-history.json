@@ -8063,6 +8063,25 @@
       "actual_winner": "Atlanta Falcons",
       "correct": false,
       "brier": 0.3014
+    },
+    {
+      "id": "nfl-2026-10-08-tampabaybuccaneers-dallascowboys",
+      "league": "nfl",
+      "sport_label": "NFL",
+      "date": "2026-10-08",
+      "away": "Tampa Bay Buccaneers",
+      "home": "Dallas Cowboys",
+      "home_win_prob": 0.476,
+      "pick": "Tampa Bay Buccaneers",
+      "pick_prob": 0.524,
+      "confidence": "Toss-up",
+      "note": null,
+      "model_version": 2,
+      "logged_at": "2026-10-05",
+      "graded": true,
+      "actual_winner": "Tampa Bay Buccaneers",
+      "correct": true,
+      "brier": 0.2266
     }
   ],
   "rollups": {}
