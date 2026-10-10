@@ -116,6 +116,19 @@ with open(os.path.join(DATA, "model_params.json")) as f:
 
 # Same static final-2025-derived ratings as compute.py (see that file's comment) --
 # kept in sync here since compute_ravens.py needs the Ravens' + each opponent's rating.
+#
+# 2026-10-10 NOTE (tried and reverted a fix -- flagging for a real future fix instead): this
+# static dict does NOT reflect compute.py's live, injury-aware v2 NFL ratings (nfl_ratings.json),
+# so it currently can't see things like Lamar Jackson being ruled OUT for Week 5 -- the schedule
+# below under-estimates how big an underdog that makes the Ravens this week. We tried wiring this
+# script to read nfl_ratings.json directly, but that dict is a SINGLE current-day snapshot applied
+# uniformly to the whole 18-week loop -- it would retroactively recompute Weeks 1-4 (already
+# played and already locked into ravens_bet_log.json) using TODAY's injury picture, producing
+# nonsense like "Week 1 vs Colts: 19.8%, large disagreement with the market" for a game the
+# Ravens already won back in September. Reverted rather than ship that. A real fix needs
+# per-week point-in-time ratings (snapshot the rating used at each week's logging time, don't
+# recompute historical weeks from current state) -- a bigger change than belongs in an
+# unattended daily refresh; flagged to Zak instead of guessing at it.
 ratings = {"Denver Broncos": 3.706, "New England Patriots": 7.0, "Jacksonville Jaguars": 5.682, "Pittsburgh Steelers": 0.412, "Houston Texans": 4.488, "Buffalo Bills": 4.776, "Los Angeles Chargers": 1.153, "Indianapolis Colts": 2.224, "Baltimore Ravens": 1.071, "Miami Dolphins": -3.171, "Cincinnati Bengals": -3.212, "Kansas City Chiefs": 1.4, "Cleveland Browns": -4.118, "Las Vegas Raiders": -7.865, "New York Jets": -8.359, "Tennessee Titans": -7.988, "Seattle Seahawks": 7.865, "Chicago Bears": 1.071, "Philadelphia Eagles": 2.224, "Los Angeles Rams": 7.082, "San Francisco 49ers": 2.718, "Carolina Panthers": -2.841, "Tampa Bay Buccaneers": -1.276, "Atlanta Falcons": -1.976, "Green Bay Packers": 1.276, "Minnesota Vikings": 0.453, "Detroit Lions": 2.8, "Dallas Cowboys": -1.647, "New Orleans Saints": -3.171, "Washington Commanders": -3.912, "New York Giants": -2.388, "Arizona Cardinals": -5.476}
 
 with open(os.path.join(DATA, "ravens_schedule.json")) as f:

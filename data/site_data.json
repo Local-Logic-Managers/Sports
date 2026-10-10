@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09",
+  "generated_at": "2026-10-10",
   "model_version": 1,
   "leagues": {
     "nfl": {
@@ -9,7 +9,7 @@
       "ratings": {
         "Arizona Cardinals": -14.0,
         "Atlanta Falcons": -2.9,
-        "Baltimore Ravens": -6.555,
+        "Baltimore Ravens": -13.255,
         "Buffalo Bills": 4.2,
         "Carolina Panthers": -5.5,
         "Chicago Bears": -4.5,
@@ -165,22 +165,22 @@
           "away": "Baltimore Ravens",
           "home": "Atlanta Falcons",
           "date": "2026-10-11",
-          "home_win_prob": 0.63,
+          "home_win_prob": 0.777,
           "model_version": 2,
           "pick": "Atlanta Falcons",
-          "pick_prob": 0.63,
-          "confidence": "Lean",
+          "pick_prob": 0.777,
+          "confidence": "Moderate",
           "market_odds": {
-            "home_ml": "-160",
-            "away_ml": "+156",
-            "book": "Dimers.com (2026-10-08, 12:38pm ET); cross-checked vs. FanDuel (2026-10-07, Falcons -172/Ravens +144) -- essentially unchanged from the 10-06/10-07 flip to Atlanta favorite"
+            "home_ml": "-173",
+            "away_ml": "+146",
+            "book": "Fox Sports (2026-10-09, 13:32 UTC); cross-checked vs. Dimers.com (2026-10-08, -160/+156), FanDuel (2026-10-07, -172/+144), OddsShopper (2026-10-09, -175/+145) -- line held at Falcons -3.5/total 43.5 all week, moneyline settled toward Atlanta as Lamar Jackson's Week 5 absence was confirmed official"
           },
           "value_bet": {
-            "market_implied_prob": 0.612,
-            "model_prob": 0.63,
-            "edge_pts": 0.018,
-            "read": "Model roughly agrees with the market.",
-            "large_disagreement": false
+            "market_implied_prob": 0.609,
+            "model_prob": 0.777,
+            "edge_pts": 0.168,
+            "read": "Large disagreement with the market \u2014 more likely our simple model is missing context than a real edge over the book's pricing.",
+            "large_disagreement": true
           }
         },
         {
@@ -197,7 +197,7 @@
     },
     "mlb": {
       "label": "MLB",
-      "status": "2026 regular season complete (ended Sept 27) \u2014 ratings above are final-season power ratings. Postseason underway: last reliably confirmed as of Oct 7 \u2014 NLDS: Dodgers led Braves 2-1 (after a 3-1 Game 3 win Oct 6), Brewers led Padres 2-1 (after San Diego's 4-3 Game 3 win Oct 6 forced a Game 4); ALDS: White Sox led Guardians 2-0, Rays led Yankees 2-0, each with a potential clinching game that night. Series results since Oct 7 could not be independently verified this refresh (search returned contaminated/stale recaps from past seasons) \u2014 check a live scoreboard for the latest before relying on this status. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+      "status": "2026 regular season complete (ended Sept 27) \u2014 ratings above are final-season power ratings. Postseason underway, confirmed as of Oct 10: NLDS \u2014 Dodgers over Braves 3-1 (clinched Oct 7) and Brewers over Padres 3-1 (clinched ~Oct 7-8), both final; NLCS Dodgers vs. Brewers starts Sun Oct 11 (Brewers host Game 1, Fox). ALDS \u2014 Rays swept the Yankees 3-0 (clinched Oct 7), final; White Sox vs. Guardians tied 2-2, win-or-go-home Game 5 today (Oct 10) at Progressive Field, Cleveland (8pm ET, TBS); ALCS (Rays vs. that winner) starts Mon Oct 12 at Tampa Bay. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
       "ratings": {
         "Tampa Bay Rays": 0.473,
         "New York Yankees": 0.762,
@@ -236,35 +236,35 @@
       "label": "Premier League",
       "status": "in season \u2014 early-season ratings are heavily shrunk toward league average",
       "ratings": {
-        "Arsenal": 0.7,
-        "Manchester City": 0.6,
+        "Manchester City": 0.727,
+        "Arsenal": 0.364,
+        "Brighton and Hove Albion": 1.0,
         "Brentford": 0.545,
-        "Leeds United": 0.4,
-        "Hull City": 0.3,
-        "Brighton and Hove Albion": 0.8,
+        "Leeds United": 0.364,
+        "Liverpool": 0.273,
+        "Everton": 0.273,
+        "Hull City": 0.182,
+        "Newcastle United": 0.0,
         "Chelsea": -0.182,
-        "Liverpool": 0.2,
-        "Everton": 0.2,
-        "Ipswich Town": -0.3,
-        "Nottingham Forest": 0.0,
-        "Newcastle United": -0.1,
+        "Ipswich Town": -0.364,
         "Manchester United": 0.0,
-        "Sunderland": -0.2,
+        "Nottingham Forest": -0.091,
+        "Sunderland": -0.364,
+        "Crystal Palace": -0.455,
         "Aston Villa": -0.455,
-        "AFC Bournemouth": -0.1,
-        "Crystal Palace": -0.5,
-        "Tottenham Hotspur": -0.545,
-        "Fulham": -0.3,
-        "Coventry City": -1.0
+        "AFC Bournemouth": -0.182,
+        "Coventry City": -0.818,
+        "Fulham": -0.273,
+        "Tottenham Hotspur": -0.545
       },
       "games": [
         {
           "away": "Leeds United",
           "home": "Arsenal",
           "date": "2026-10-10",
-          "home_win_prob": 0.649,
+          "home_win_prob": 0.582,
           "pick": "Arsenal",
-          "pick_prob": 0.649,
+          "pick_prob": 0.582,
           "confidence": "Lean",
           "market_odds": {
             "home_win_prob": 0.684,
@@ -274,8 +274,8 @@
           },
           "value_bet": {
             "market_implied_prob": 0.684,
-            "model_prob": 0.649,
-            "edge_pts": -0.035,
+            "model_prob": 0.582,
+            "edge_pts": -0.102,
             "read": "Model leans slightly more toward the away side than the market does.",
             "large_disagreement": false,
             "note": "Market prob is a 3-way (home/draw/away) line; our model does not yet price a draw outcome, so this comparison is approximate."
@@ -294,28 +294,28 @@
           "away": "AFC Bournemouth",
           "home": "Chelsea",
           "date": "2026-10-10",
-          "home_win_prob": 0.563,
+          "home_win_prob": 0.582,
           "pick": "Chelsea",
-          "pick_prob": 0.563,
+          "pick_prob": 0.582,
           "confidence": "Lean"
         },
         {
           "away": "Fulham",
           "home": "Ipswich Town",
           "date": "2026-10-10",
-          "home_win_prob": 0.582,
+          "home_win_prob": 0.561,
           "pick": "Ipswich Town",
-          "pick_prob": 0.582,
+          "pick_prob": 0.561,
           "confidence": "Lean"
         },
         {
           "away": "Brighton and Hove Albion",
           "home": "Sunderland",
           "date": "2026-10-10",
-          "home_win_prob": 0.351,
+          "home_win_prob": 0.275,
           "pick": "Brighton and Hove Albion",
-          "pick_prob": 0.649,
-          "confidence": "Lean"
+          "pick_prob": 0.725,
+          "confidence": "Moderate"
         },
         {
           "away": "Tottenham Hotspur",
@@ -330,27 +330,27 @@
           "away": "Nottingham Forest",
           "home": "Crystal Palace",
           "date": "2026-10-11",
-          "home_win_prob": 0.465,
+          "home_win_prob": 0.497,
           "pick": "Nottingham Forest",
-          "pick_prob": 0.535,
+          "pick_prob": 0.503,
           "confidence": "Toss-up"
         },
         {
           "away": "Everton",
           "home": "Hull City",
           "date": "2026-10-11",
-          "home_win_prob": 0.604,
+          "home_win_prob": 0.561,
           "pick": "Hull City",
-          "pick_prob": 0.604,
+          "pick_prob": 0.561,
           "confidence": "Lean"
         },
         {
           "away": "Manchester City",
           "home": "Liverpool",
           "date": "2026-10-11",
-          "home_win_prob": 0.488,
+          "home_win_prob": 0.476,
           "pick": "Manchester City",
-          "pick_prob": 0.512,
+          "pick_prob": 0.524,
           "confidence": "Toss-up",
           "market_odds": {
             "home_win_prob": 0.371,
@@ -360,8 +360,8 @@
           },
           "value_bet": {
             "market_implied_prob": 0.371,
-            "model_prob": 0.488,
-            "edge_pts": 0.117,
+            "model_prob": 0.476,
+            "edge_pts": 0.105,
             "read": "Model leans slightly more toward the home side than the market does.",
             "large_disagreement": false,
             "note": "Market prob is a 3-way (home/draw/away) line; our model does not yet price a draw outcome, so this comparison is approximate."
@@ -371,9 +371,9 @@
           "away": "Newcastle United",
           "home": "Coventry City",
           "date": "2026-10-12",
-          "home_win_prob": 0.373,
+          "home_win_prob": 0.392,
           "pick": "Newcastle United",
-          "pick_prob": 0.627,
+          "pick_prob": 0.608,
           "confidence": "Lean"
         }
       ]

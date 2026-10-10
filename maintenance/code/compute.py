@@ -125,6 +125,12 @@ NFL_INJURY_TURNOVER = {
     # questionable (supersedes the 10-05 note that he'd been upgraded to full; that was about a
     # different week's designation). Hendrickson/Simpson/Tampa carried forward unchanged (no fresher
     # word on them specifically this refresh).
+    # 2026-10-10: official Friday (10/9) injury report/game-status designations are in (NFL.com,
+    # ClutchPoints, Yardbarker). Lamar Jackson (left ankle sprain) officially OUT vs. Atlanta --
+    # Tyler Huntley starts. Trey Hendrickson (finger) also officially OUT. Marlon Humphrey
+    # (hamstring/calf) newly listed Questionable -- added. Zay Flowers (foot) remains Questionable.
+    # Andrew Vorhees (foot) also Questionable per the same report but not modeled (backup-tier
+    # depth, no clear starter impact). Simpson/Tampa carried forward unchanged (no fresher word).
     "Baltimore Ravens": {
         "injuries": [
             {"pos": "C", "severity": "out"},              # Danny Pinter, out for the season
@@ -132,11 +138,12 @@ NFL_INJURY_TURNOVER = {
             {"pos": "C", "severity": "out"},               # Jovaughn Gwyn, fractured fibula, IR, ~2-3 months
             {"pos": "C", "severity": "out"},               # Ethan Pocic, knee, placed on IR
             {"pos": "TE", "severity": "out"},              # Durham Smythe, Achilles, placed on IR (2026-10-07)
-            {"pos": "QB", "severity": "questionable"},     # Lamar Jackson, left ankle sprain, DNP Wed+Thu, still no designation as of 10/8-9
-            {"pos": "OLB", "severity": "questionable"},    # Trey Hendrickson, finger (multi-fracture per reports)
+            {"pos": "QB", "severity": "out"},              # Lamar Jackson, left ankle sprain -- officially OUT for Week 5 (2026-10-09), Tyler Huntley starts
+            {"pos": "OLB", "severity": "out"},             # Trey Hendrickson, finger -- officially OUT for Week 5 (2026-10-09)
             {"pos": "G", "severity": "questionable"},      # John Simpson, groin, limited
             {"pos": "CB", "severity": "questionable"},     # T.J. Tampa, knee, no fresh update carried forward
-            {"pos": "WR", "severity": "questionable"},     # Zay Flowers, foot, limited multiple straight days (re-added 2026-10-09)
+            {"pos": "WR", "severity": "questionable"},     # Zay Flowers, foot, limited multiple straight days
+            {"pos": "CB", "severity": "questionable"},     # Marlon Humphrey, hamstring/calf -- new (2026-10-10)
         ],
         "departures": ["TE", "FB", "OT", "P", "S", "CB", "OLB", "WR"],  # Likely, Ricard, Faalele, Stout, Washington, Alexander, Oweh, C.Johnson
         "acquisitions": ["OLB", "S", "CB", "LB", "ILB"],                 # D.Jones, Gilman, White, Hendrickson, Barrett
@@ -272,6 +279,14 @@ for team, win_total in NFL_SEASON_WIN_TOTALS.items():
         acquisitions=extra.get("acquisitions"),
     ), 3)
 
+# 2026-10-10: export the live v2 ratings (win-total baseline + this refresh's injury/turnover
+# adjustments) so compute_ravens.py can read the SAME current ratings instead of maintaining its
+# own separate, staler static dict (that dict had drifted out of sync with v2's injury-aware
+# ratings -- e.g. it had no way to reflect Lamar Jackson being ruled out for Week 5). Written
+# early so later leagues' processing doesn't block it if something downstream errors.
+with open(os.path.join(DATA, "nfl_ratings.json"), "w") as f:
+    json.dump(nfl_ratings, f, indent=2)
+
 # 2026-09-08: was a hardcoded Week-1-only literal list; now reads from nfl_slate.csv
 # (away,home,date -- same convention as mlb_slate.csv/epl_fixtures.csv/etc.) so adding Week 2+
 # is a data update, not a code change. 2026-09-15: Week 1 is complete (all 16 games graded --
@@ -284,12 +299,13 @@ nfl_week1 = [(r["away"], r["home"], r["date"]) for r in read_csv("nfl_slate.csv"
 # so last run's Week 4 lines are retired. A game not in this dict just doesn't get a
 # market_odds/value_bet/blended_prob block attached -- populated opportunistically, not every fixture.
 NFL_MARKET_ODDS = {
-    # 2026-10-09: line essentially held steady vs. the 10-07 flip (within normal book variance).
-    # Dimers.com (2026-10-08, 12:38pm ET): Falcons -160 ML / Ravens +156, spread Falcons -3.5 (+108)
-    # / Ravens +3.5 (-113), total 43.5. Cross-checked vs. FanDuel (2026-10-07): Falcons -172 / Ravens
-    # +144, spread Falcons -3.5, total 43.5. Continues to track Lamar Jackson's ongoing absence from
-    # practice (DNP again Thu 10/8) with still no official game-status designation.
-    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "-160", "away_ml": "+156", "book": "Dimers.com (2026-10-08, 12:38pm ET); cross-checked vs. FanDuel (2026-10-07, Falcons -172/Ravens +144) -- essentially unchanged from the 10-06/10-07 flip to Atlanta favorite"},
+    # 2026-10-10: line drifted a touch further toward Atlanta as Lamar Jackson's absence was
+    # confirmed official (out, Huntley starting) on Friday 10/9. Fox Sports (2026-10-09, 13:32 UTC):
+    # Falcons -173 ML / Ravens +146, spread Falcons -3.5, total 43.5. Cross-checked vs. Dimers.com
+    # (2026-10-08: -160/+156), FanDuel (2026-10-07: -172/+144), and OddsShopper (2026-10-09: -175/+145,
+    # spread moved from -2.5 earlier in the week to -3.5) -- all consistent on spread/total, with the
+    # moneyline settling in the -160 to -175 / +144 to +156 range as Jackson-out firmed up.
+    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "-173", "away_ml": "+146", "book": "Fox Sports (2026-10-09, 13:32 UTC); cross-checked vs. Dimers.com (2026-10-08, -160/+156), FanDuel (2026-10-07, -172/+144), OddsShopper (2026-10-09, -175/+145) -- line held at Falcons -3.5/total 43.5 all week, moneyline settled toward Atlanta as Lamar Jackson's Week 5 absence was confirmed official"},
 }
 
 nfl_games = []
@@ -327,7 +343,7 @@ mlb_slate = [(r["away"], r["home"], r["date"]) for r in read_csv("mlb_slate.csv"
 mlb_games = [build_game("mlb", a, h, d, mlb_ratings.get(h, 0), mlb_ratings.get(a, 0)) for a, h, d in mlb_slate]
 results["leagues"]["mlb"] = {
     "label": "MLB",
-    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway: last reliably confirmed as of Oct 7 — NLDS: Dodgers led Braves 2-1 (after a 3-1 Game 3 win Oct 6), Brewers led Padres 2-1 (after San Diego's 4-3 Game 3 win Oct 6 forced a Game 4); ALDS: White Sox led Guardians 2-0, Rays led Yankees 2-0, each with a potential clinching game that night. Series results since Oct 7 could not be independently verified this refresh (search returned contaminated/stale recaps from past seasons) — check a live scoreboard for the latest before relying on this status. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway, confirmed as of Oct 10: NLDS — Dodgers over Braves 3-1 (clinched Oct 7) and Brewers over Padres 3-1 (clinched ~Oct 7-8), both final; NLCS Dodgers vs. Brewers starts Sun Oct 11 (Brewers host Game 1, Fox). ALDS — Rays swept the Yankees 3-0 (clinched Oct 7), final; White Sox vs. Guardians tied 2-2, win-or-go-home Game 5 today (Oct 10) at Progressive Field, Cleveland (8pm ET, TBS); ALCS (Rays vs. that winner) starts Mon Oct 12 at Tampa Bay. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
     "ratings": mlb_ratings, "games": mlb_games,
 }
 
