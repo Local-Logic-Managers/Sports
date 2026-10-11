@@ -1,11 +1,15 @@
 away,home,date
-Leeds United,Arsenal,2026-10-10
-Brentford,Aston Villa,2026-10-10
-AFC Bournemouth,Chelsea,2026-10-10
-Fulham,Ipswich Town,2026-10-10
-Brighton and Hove Albion,Sunderland,2026-10-10
-Tottenham Hotspur,Manchester United,2026-10-10
 Nottingham Forest,Crystal Palace,2026-10-11
 Everton,Hull City,2026-10-11
 Manchester City,Liverpool,2026-10-11
 Newcastle United,Coventry City,2026-10-12
+Liverpool,Brentford,2026-10-17
+Chelsea,Everton,2026-10-17
+Hull City,Fulham,2026-10-17
+Ipswich Town,Manchester City,2026-10-17
+Aston Villa,Newcastle United,2026-10-17
+Sunderland,AFC Bournemouth,2026-10-18
+Crystal Palace,Brighton and Hove Albion,2026-10-18
+Manchester United,Leeds United,2026-10-18
+Arsenal,Nottingham Forest,2026-10-18
+Coventry City,Tottenham Hotspur,2026-10-19

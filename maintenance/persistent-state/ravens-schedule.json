@@ -67,7 +67,7 @@
       "opponent": "-173",
       "spread": "Falcons -3.5",
       "total": 43.5,
-      "book": "Fox Sports (2026-10-09, 13:32 UTC); cross-checked vs. Dimers.com (2026-10-08, -160/+156), FanDuel (2026-10-07, -172/+144), OddsShopper (2026-10-09, -175/+145) — line held at Falcons -3.5/total 43.5 all week; moneyline settled toward Atlanta as Lamar Jackson's Week 5 absence was confirmed OFFICIAL (out, Tyler Huntley starting) on Friday 10/9 — see ravens-data.json roster notes."
+      "book": "Fox Sports (2026-10-09, 13:32 UTC); cross-checked vs. Dimers.com (2026-10-08, -160/+156), FanDuel (2026-10-07, -172/+144), OddsShopper (2026-10-09, -175/+145) \u2014 line held at Falcons -3.5/total 43.5 all week; moneyline settled toward Atlanta as Lamar Jackson's Week 5 absence was confirmed OFFICIAL (out, Tyler Huntley starting) on Friday 10/9 \u2014 see ravens-data.json roster notes."
     }
   },
   {
@@ -77,11 +77,11 @@
     "date": "2026-10-18",
     "neutral": false,
     "market_odds": {
-      "ravens": "-250",
-      "opponent": "+205",
-      "spread": "Ravens -6.5",
-      "total": 44.5,
-      "book": "DraftKings via statsniper.com (2026-10-04) — single-sourced snapshot, not cross-checked against a second book; lines may move before kickoff"
+      "ravens": "-174",
+      "opponent": "+146",
+      "spread": "Ravens -3",
+      "total": 41.5,
+      "book": "Cross-checked 2026-10-11: statsniper.com/DraftKings (Ravens -166/Browns +140, spread -3, total 41.5) and fantasydata.com (Ravens -182/Browns +150, spread -3, total 41.5) now agree closely -- line has moved sharply from the single-sourced Oct 4 snapshot (Ravens -250/-6.5) as Lamar Jackson's ankle uncertainty persists past Week 5 and the O-line was reshuffled (Cam Jurgens trade, Durham Smythe IR). Taking the midpoint of the two sources (-174/+146) as the representative number."
     }
   },
   {
@@ -89,7 +89,14 @@
     "opponent": "Cincinnati Bengals",
     "location": "home",
     "date": "2026-10-25",
-    "neutral": false
+    "neutral": false,
+    "market_odds": {
+      "ravens": "-210",
+      "opponent": "+175",
+      "spread": "Ravens -4",
+      "total": 50.5,
+      "book": "Cross-confirmed 2026-10-11: Caesars and fantasydata.com agree exactly (Ravens -210/Bengals +175, spread -4, total 50.5); DraftKings via statsniper.com slightly softer (-185/+154, spread -3.5, total 51.5). Newly posted since last refresh."
+    }
   },
   {
     "week": 8,
