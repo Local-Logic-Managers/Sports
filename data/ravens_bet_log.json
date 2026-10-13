@@ -85,8 +85,8 @@
     "headline": "Too close to call",
     "reasoning": "The model has this game at 55% for the Ravens \u2014 close enough to a coin flip that there's no real edge either way.",
     "logged_at": "2026-09-22",
-    "graded": false,
-    "actual_winner": null,
+    "graded": true,
+    "actual_winner": "Baltimore Ravens",
     "side_won": null
   },
   {

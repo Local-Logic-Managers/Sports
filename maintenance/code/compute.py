@@ -84,6 +84,21 @@ NFL_NEW_HC_TEAMS = {  # first season under a new head coach, 2026 -- drives the 
 # work per the Ravens diagnostic. Extend opportunistically as real injury/
 # transaction news gets sourced for other teams.
 NFL_INJURY_TURNOVER = {
+    # 2026-10-13: refreshed for Week 6 (at Cleveland Browns, 10/18). Ravens beat Atlanta 30-23 in OT
+    # on 10/11 to improve to 4-1 (Tyler Huntley started in place of Lamar Jackson). As of today, no
+    # Week 6 practice-participation report has posted yet (those start Wed 10/14) -- Jackson's ankle
+    # sprain status for this game is genuinely unresolved (one report floated "1-3 games" on 10/6;
+    # nothing dated 10/12 or 10/13 confirms a return or a further absence either way), so modeled
+    # conservatively as questionable rather than carrying forward last week's "out" or assuming a
+    # clean return. Trey Hendrickson (finger) similarly has no fresh Week 6 word -- downgraded from
+    # "out" to questionable pending the official report, since enough recovery time has likely passed
+    # but nothing confirms full clearance. Zay Flowers and Marlon Humphrey were both trending to play
+    # as of the Week 5 report and nothing suggests a new issue from the Atlanta game -- removed from
+    # the questionable list. T.J. Tampa carried no fresh word for several refreshes running -- dropped
+    # rather than keep stale. New center Cam Jurgens (acquired via trade from Philadelphia, 2026-10-07)
+    # was in the concussion protocol and did not play Week 5; reports expect a Week 6 debut but that
+    # is not independently confirmed as "cleared" as of this refresh, and the model has no mechanism
+    # for an in-season trade acquisition's rating impact, so it is noted here but not adjusted for.
     # 2026-10-02: refreshed for Week 4 (vs. Tennessee Titans, 10/4) off Wed/Thu practice-participation
     # reports (Yahoo Sports, RoundTable.io, ClutchPoints, SharpFootballAnalysis roundup -- official
     # Friday designations hadn't posted yet as of this refresh). Nnamdi Madubuike and Teddye Buchanan
@@ -138,12 +153,8 @@ NFL_INJURY_TURNOVER = {
             {"pos": "C", "severity": "out"},               # Jovaughn Gwyn, fractured fibula, IR, ~2-3 months
             {"pos": "C", "severity": "out"},               # Ethan Pocic, knee, placed on IR
             {"pos": "TE", "severity": "out"},              # Durham Smythe, Achilles, placed on IR (2026-10-07)
-            {"pos": "QB", "severity": "out"},              # Lamar Jackson, left ankle sprain -- officially OUT for Week 5 (2026-10-09), Tyler Huntley starts
-            {"pos": "OLB", "severity": "out"},             # Trey Hendrickson, finger -- officially OUT for Week 5 (2026-10-09)
-            {"pos": "G", "severity": "questionable"},      # John Simpson, groin, limited
-            {"pos": "CB", "severity": "questionable"},     # T.J. Tampa, knee, no fresh update carried forward
-            {"pos": "WR", "severity": "questionable"},     # Zay Flowers, foot, limited multiple straight days
-            {"pos": "CB", "severity": "questionable"},     # Marlon Humphrey, hamstring/calf -- new (2026-10-10)
+            {"pos": "QB", "severity": "questionable"},     # Lamar Jackson, left ankle sprain -- no Week 6 report yet (2026-10-13), status unresolved
+            {"pos": "OLB", "severity": "questionable"},    # Trey Hendrickson, finger -- no fresh Week 6 word, downgraded from "out" pending report
         ],
         "departures": ["TE", "FB", "OT", "P", "S", "CB", "OLB", "WR"],  # Likely, Ricard, Faalele, Stout, Washington, Alexander, Oweh, C.Johnson
         "acquisitions": ["OLB", "S", "CB", "LB", "ILB"],                 # D.Jones, Gilman, White, Hendrickson, Barrett
@@ -299,13 +310,13 @@ nfl_week1 = [(r["away"], r["home"], r["date"]) for r in read_csv("nfl_slate.csv"
 # so last run's Week 4 lines are retired. A game not in this dict just doesn't get a
 # market_odds/value_bet/blended_prob block attached -- populated opportunistically, not every fixture.
 NFL_MARKET_ODDS = {
-    # 2026-10-10: line drifted a touch further toward Atlanta as Lamar Jackson's absence was
-    # confirmed official (out, Huntley starting) on Friday 10/9. Fox Sports (2026-10-09, 13:32 UTC):
-    # Falcons -173 ML / Ravens +146, spread Falcons -3.5, total 43.5. Cross-checked vs. Dimers.com
-    # (2026-10-08: -160/+156), FanDuel (2026-10-07: -172/+144), and OddsShopper (2026-10-09: -175/+145,
-    # spread moved from -2.5 earlier in the week to -3.5) -- all consistent on spread/total, with the
-    # moneyline settling in the -160 to -175 / +144 to +156 range as Jackson-out firmed up.
-    ("Baltimore Ravens", "Atlanta Falcons"): {"home_ml": "-173", "away_ml": "+146", "book": "Fox Sports (2026-10-09, 13:32 UTC); cross-checked vs. Dimers.com (2026-10-08, -160/+156), FanDuel (2026-10-07, -172/+144), OddsShopper (2026-10-09, -175/+145) -- line held at Falcons -3.5/total 43.5 all week, moneyline settled toward Atlanta as Lamar Jackson's Week 5 absence was confirmed official"},
+    # Week 5 (Ravens @ Falcons) has been played and graded (Ravens won 30-23 in OT) -- that line is
+    # retired. 2026-10-13: Week 6 (Ravens @ Cleveland Browns, 10/18) line via statsniper.com
+    # (aggregating FanDuel/BetMGM/DraftKings/Caesars), cross-checked against fantasydata.com -- both
+    # agree Ravens favored by ~3.5-4.5, moneyline roughly Ravens -220/-225 vs. Browns +180/+188, total
+    # ~40.5-41.5. Taken as a pre-game-week snapshot; no explicit timestamp on the aggregator, and lines
+    # may move once a Week 6 injury report clarifies Lamar Jackson's status.
+    ("Baltimore Ravens", "Cleveland Browns"): {"home_ml": "+188", "away_ml": "-225", "book": "statsniper.com (FanDuel/BetMGM/DraftKings/Caesars aggregate, 2026-10-13), cross-checked vs. fantasydata.com (Ravens -225/Browns +187) -- Ravens favored by ~3.5-4.5, total ~40.5-41.5; pre-Week-6-injury-report snapshot"},
 }
 
 nfl_games = []
@@ -325,7 +336,7 @@ for a, h, d in nfl_week1:
     nfl_games.append(g)
 results["leagues"]["nfl"] = {
     "label": "NFL",
-    "status": "v2 ratings (win-total baseline + injury/turnover/regime-change adjustments) — Weeks 1-4 complete; Week 5 underway (Thu 10/8 Buccaneers @ Cowboys final, graded) — remaining Week 5 slate below (Oct 11-12)",
+    "status": "v2 ratings (win-total baseline + injury/turnover/regime-change adjustments) — Weeks 1-5 complete (Week 5 included a tie: Giants 27, Commanders 27 in OT) — Week 6 slate below (Oct 15-19)",
     "model_version": 2,
     "ratings": nfl_ratings, "games": nfl_games,
 }
@@ -343,7 +354,7 @@ mlb_slate = [(r["away"], r["home"], r["date"]) for r in read_csv("mlb_slate.csv"
 mlb_games = [build_game("mlb", a, h, d, mlb_ratings.get(h, 0), mlb_ratings.get(a, 0)) for a, h, d in mlb_slate]
 results["leagues"]["mlb"] = {
     "label": "MLB",
-    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway, confirmed as of Oct 10: NLDS — Dodgers over Braves 3-1 (clinched Oct 7) and Brewers over Padres 3-1 (clinched ~Oct 7-8), both final; NLCS Dodgers vs. Brewers starts Sun Oct 11 (Brewers host Game 1, Fox). ALDS — Rays swept the Yankees 3-0 (clinched Oct 7), final; White Sox vs. Guardians tied 2-2, win-or-go-home Game 5 today (Oct 10) at Progressive Field, Cleveland (8pm ET, TBS); ALCS (Rays vs. that winner) starts Mon Oct 12 at Tampa Bay. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway, confirmed as of Oct 13: NLCS — Milwaukee Brewers lead the LA Dodgers 2-0 (Game 1: Brewers 2-1, Game 2: Brewers 7-4, both at Milwaukee); Game 3 is Wed Oct 14 in Los Angeles. ALDS is decided — Cleveland Guardians beat the Chicago White Sox 3-2 (Game 5, Oct 10). ALCS — Cleveland Guardians lead the Tampa Bay Rays 1-0 (Game 1: Guardians 7-3); Game 2 is tonight, Oct 13, at Tampa Bay. World Series matchup not yet set. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
     "ratings": mlb_ratings, "games": mlb_games,
 }
 

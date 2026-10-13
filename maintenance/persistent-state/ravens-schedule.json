@@ -77,11 +77,11 @@
     "date": "2026-10-18",
     "neutral": false,
     "market_odds": {
-      "ravens": "-174",
-      "opponent": "+146",
-      "spread": "Ravens -3",
-      "total": 41.5,
-      "book": "Cross-checked 2026-10-11: statsniper.com/DraftKings (Ravens -166/Browns +140, spread -3, total 41.5) and fantasydata.com (Ravens -182/Browns +150, spread -3, total 41.5) now agree closely -- line has moved sharply from the single-sourced Oct 4 snapshot (Ravens -250/-6.5) as Lamar Jackson's ankle uncertainty persists past Week 5 and the O-line was reshuffled (Cam Jurgens trade, Durham Smythe IR). Taking the midpoint of the two sources (-174/+146) as the representative number."
+      "ravens": "-225",
+      "opponent": "+188",
+      "spread": "Ravens -4",
+      "total": 41,
+      "book": "Updated 2026-10-13: statsniper.com (FanDuel/BetMGM/DraftKings/Caesars aggregate) and fantasydata.com both now show Ravens favored by ~3.5-4.5 (Ravens -220 to -225 / Browns +180 to +188, total ~40.5-41.5) -- line has firmed up toward Baltimore since the Oct 11 cross-check (-174/+146), despite Lamar Jackson's Week 6 status still being unconfirmed as of this refresh; no explicit timestamp on the aggregator snapshot, treat as pre-injury-report."
     }
   },
   {

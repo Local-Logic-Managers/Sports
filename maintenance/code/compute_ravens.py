@@ -215,7 +215,9 @@ bet_log.sort(key=lambda c: c["week"])
 # Week 2: Ravens lost to the Saints 24-17 at home, blowing a 14-3 lead (2026-09-20).
 # Week 3: Ravens beat the Cowboys 34-31 at a neutral site in Rio de Janeiro (2026-09-27).
 # Week 4: Ravens beat the Titans 24-18 at home (2026-10-04).
-bet_log = grade_ravens_calls(bet_log, {1: "Baltimore Ravens", 2: "New Orleans Saints", 3: "Baltimore Ravens", 4: "Baltimore Ravens"})
+# Week 5: Ravens beat the Falcons 30-23 in overtime at Atlanta (2026-10-11), Tyler Huntley starting
+# for the injured Lamar Jackson.
+bet_log = grade_ravens_calls(bet_log, {1: "Baltimore Ravens", 2: "New Orleans Saints", 3: "Baltimore Ravens", 4: "Baltimore Ravens", 5: "Baltimore Ravens"})
 
 with open(bet_log_path, "w") as f:
     json.dump(bet_log, f, indent=2)

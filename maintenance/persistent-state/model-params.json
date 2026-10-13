@@ -1,28 +1,28 @@
 {
   "version": 1,
-  "last_calibrated": "2026-09-12",
+  "last_calibrated": "2026-10-13",
   "leagues": {
     "nfl": {
-      "home_adv": 1.5,
-      "sigma": 13.5,
+      "home_adv": 1.0,
+      "sigma": 14.5,
       "shrink_k": 4,
       "unit": "pt"
     },
     "mlb": {
-      "home_adv": 0.4,
-      "sigma": 2.6,
+      "home_adv": 0.15,
+      "sigma": 2.1,
       "shrink_k": 20,
       "unit": "run"
     },
     "epl": {
-      "home_adv": 0.35,
+      "home_adv": -0.15,
       "sigma": 1.7,
       "shrink_k": 6,
       "unit": "goal"
     },
     "mls": {
-      "home_adv": 0.3,
-      "sigma": 1.75,
+      "home_adv": -0.2,
+      "sigma": 2.75,
       "shrink_k": 6,
       "unit": "goal"
     },
@@ -123,6 +123,50 @@
       "n": 120,
       "old_brier": 0.2305,
       "new_brier": 0.2305
+    },
+    {
+      "date": "2026-10-13",
+      "league": "mlb",
+      "old_home_adv": 0.4,
+      "new_home_adv": 0.15,
+      "old_sigma": 2.6,
+      "new_sigma": 2.1,
+      "n": 246,
+      "old_brier": 0.2346,
+      "new_brier": 0.2337
+    },
+    {
+      "date": "2026-10-13",
+      "league": "nfl",
+      "old_home_adv": 1.5,
+      "new_home_adv": 1.0,
+      "old_sigma": 13.5,
+      "new_sigma": 14.5,
+      "n": 84,
+      "old_brier": 0.2426,
+      "new_brier": 0.2409
+    },
+    {
+      "date": "2026-10-13",
+      "league": "epl",
+      "old_home_adv": 0.35,
+      "new_home_adv": -0.15,
+      "old_sigma": 1.7,
+      "new_sigma": 1.7,
+      "n": 37,
+      "old_brier": 0.2674,
+      "new_brier": 0.2348
+    },
+    {
+      "date": "2026-10-13",
+      "league": "mls",
+      "old_home_adv": 0.3,
+      "new_home_adv": -0.2,
+      "old_sigma": 1.75,
+      "new_sigma": 2.75,
+      "n": 81,
+      "old_brier": 0.2624,
+      "new_brier": 0.2403
     }
   ]
 }
