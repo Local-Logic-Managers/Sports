@@ -146,15 +146,27 @@ NFL_INJURY_TURNOVER = {
     # (hamstring/calf) newly listed Questionable -- added. Zay Flowers (foot) remains Questionable.
     # Andrew Vorhees (foot) also Questionable per the same report but not modeled (backup-tier
     # depth, no clear starter impact). Simpson/Tampa carried forward unchanged (no fresher word).
+    # 2026-10-14: checked for the official Wednesday Week 6 (at Cleveland, 10/18) practice report --
+    # it had not posted yet as of this refresh (those typically land early-to-mid afternoon ET).
+    # Latest word is HC Jesse Minter's Monday 10/12 presser: Lamar Jackson's ankle "continues to
+    # improve" but Minter would not guarantee he plays Sunday ("we'll know more by the middle of the
+    # week"). Keeping Jackson modeled as questionable, same as last refresh, pending the real
+    # designation. Trey Hendrickson (finger) -- Minter said Wk 6 is plausible, "chomping at the bit,"
+    # also still unconfirmed by practice report -- kept as questionable. New center Cam Jurgens
+    # (concussion protocol) is reportedly in the "finishing stages" and trending to debut vs.
+    # Cleveland, but not yet officially cleared -- still not modeled (no rating mechanism for an
+    # in-season trade acquisition, per the 10-10 note above). WR Ja'Kobi Lane (wrist, IR) is eligible
+    # to return from IR this week per Minter, but has not been activated to the 53-man roster as of
+    # this refresh -- kept as "out" pending an actual activation; revisit once confirmed active.
     "Baltimore Ravens": {
         "injuries": [
             {"pos": "C", "severity": "out"},              # Danny Pinter, out for the season
-            {"pos": "WR", "severity": "out"},              # Ja'Kobi Lane, IR (wrist surgery), out for the season
+            {"pos": "WR", "severity": "out"},              # Ja'Kobi Lane, IR (wrist surgery) -- eligible to return but not yet activated (2026-10-14)
             {"pos": "C", "severity": "out"},               # Jovaughn Gwyn, fractured fibula, IR, ~2-3 months
             {"pos": "C", "severity": "out"},               # Ethan Pocic, knee, placed on IR
             {"pos": "TE", "severity": "out"},              # Durham Smythe, Achilles, placed on IR (2026-10-07)
-            {"pos": "QB", "severity": "questionable"},     # Lamar Jackson, left ankle sprain -- no Week 6 report yet (2026-10-13), status unresolved
-            {"pos": "OLB", "severity": "questionable"},    # Trey Hendrickson, finger -- no fresh Week 6 word, downgraded from "out" pending report
+            {"pos": "QB", "severity": "questionable"},     # Lamar Jackson, left ankle sprain -- still no official Week 6 designation as of 2026-10-14, status unresolved
+            {"pos": "OLB", "severity": "questionable"},    # Trey Hendrickson, finger -- trending to return per Minter (10-12) but unconfirmed by practice report
         ],
         "departures": ["TE", "FB", "OT", "P", "S", "CB", "OLB", "WR"],  # Likely, Ricard, Faalele, Stout, Washington, Alexander, Oweh, C.Johnson
         "acquisitions": ["OLB", "S", "CB", "LB", "ILB"],                 # D.Jones, Gilman, White, Hendrickson, Barrett
@@ -311,12 +323,13 @@ nfl_week1 = [(r["away"], r["home"], r["date"]) for r in read_csv("nfl_slate.csv"
 # market_odds/value_bet/blended_prob block attached -- populated opportunistically, not every fixture.
 NFL_MARKET_ODDS = {
     # Week 5 (Ravens @ Falcons) has been played and graded (Ravens won 30-23 in OT) -- that line is
-    # retired. 2026-10-13: Week 6 (Ravens @ Cleveland Browns, 10/18) line via statsniper.com
-    # (aggregating FanDuel/BetMGM/DraftKings/Caesars), cross-checked against fantasydata.com -- both
-    # agree Ravens favored by ~3.5-4.5, moneyline roughly Ravens -220/-225 vs. Browns +180/+188, total
-    # ~40.5-41.5. Taken as a pre-game-week snapshot; no explicit timestamp on the aggregator, and lines
-    # may move once a Week 6 injury report clarifies Lamar Jackson's status.
-    ("Baltimore Ravens", "Cleveland Browns"): {"home_ml": "+188", "away_ml": "-225", "book": "statsniper.com (FanDuel/BetMGM/DraftKings/Caesars aggregate, 2026-10-13), cross-checked vs. fantasydata.com (Ravens -225/Browns +187) -- Ravens favored by ~3.5-4.5, total ~40.5-41.5; pre-Week-6-injury-report snapshot"},
+    # retired. 2026-10-14: Week 6 (Ravens @ Cleveland Browns, 10/18) line has firmed up slightly
+    # further toward Baltimore since the 10-13 snapshot -- statsniper.com's multi-book aggregate now
+    # shows Ravens -220 to -238 / Browns +180 to +195 (DraftKings most Ravens-heavy at -238/+195),
+    # Dimers.com's consensus (updated 2026-10-13 9:44pm ET) has Ravens -212/Browns +203, spread
+    # Ravens -4.5 (was -4), total 41.5 (was ~41). Still a pre-Week-6-injury-report snapshot (no
+    # official Wednesday practice report had posted as of this refresh -- see NFL_INJURY_TURNOVER).
+    ("Baltimore Ravens", "Cleveland Browns"): {"home_ml": "+195", "away_ml": "-225", "book": "statsniper.com multi-book aggregate (DraftKings/FanDuel/BetMGM/Caesars, 2026-10-14) -- Ravens -220 to -238/Browns +180 to +195, using -225/+195 as a representative mid-pack line; cross-checked vs. Dimers.com consensus (-212/+203, 2026-10-13 9:44pm ET) -- spread Ravens -4.5, total 41.5, pre-Week-6-injury-report snapshot"},
 }
 
 nfl_games = []
@@ -354,7 +367,7 @@ mlb_slate = [(r["away"], r["home"], r["date"]) for r in read_csv("mlb_slate.csv"
 mlb_games = [build_game("mlb", a, h, d, mlb_ratings.get(h, 0), mlb_ratings.get(a, 0)) for a, h, d in mlb_slate]
 results["leagues"]["mlb"] = {
     "label": "MLB",
-    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway, confirmed as of Oct 13: NLCS — Milwaukee Brewers lead the LA Dodgers 2-0 (Game 1: Brewers 2-1, Game 2: Brewers 7-4, both at Milwaukee); Game 3 is Wed Oct 14 in Los Angeles. ALDS is decided — Cleveland Guardians beat the Chicago White Sox 3-2 (Game 5, Oct 10). ALCS — Cleveland Guardians lead the Tampa Bay Rays 1-0 (Game 1: Guardians 7-3); Game 2 is tonight, Oct 13, at Tampa Bay. World Series matchup not yet set. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+    "status": "2026 regular season complete (ended Sept 27) — ratings above are final-season power ratings. Postseason underway, confirmed as of Oct 14: NLCS — Milwaukee Brewers lead the LA Dodgers 2-0 (Game 1: Brewers 2-1, Game 2: Brewers 7-4, both at Milwaukee); Game 3 is tonight, Oct 14, at Dodger Stadium (not yet played as of this refresh). ALDS is decided — Cleveland Guardians beat the Chicago White Sox 3-2 (Game 5, Oct 10). ALCS — tied 1-1: Cleveland Guardians won Game 1 7-3 at Tampa Bay (Oct 12); Tampa Bay reportedly evened the series with a 3-1 Game 2 win (Oct 13) — that result carries lower source confidence as of this refresh, worth a spot-check. Game 3 is Oct 15 at Cleveland. World Series matchup not yet set. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
     "ratings": mlb_ratings, "games": mlb_games,
 }
 
@@ -370,12 +383,15 @@ for r in epl_rows:
 # consensus price (Covers.com) -- keyed by (away, home). Most EPL games won't be
 # in this dict; it's populated opportunistically, not every fixture.
 EPL_MARKET_ODDS = {
-    # Updated 2026-10-07: DraftKings via gainblers.com (for the 2026-10-10 fixture) has Arsenal
-    # ticking up slightly from the 10-04 Bet365 line (67.1/20.6/12.3 -> 68.4/19.1/12.5).
-    ("Leeds United", "Arsenal"): {"home_win_prob": 0.684, "draw_prob": 0.191, "away_win_prob": 0.125, "book": "DraftKings via gainblers.com (2026-10-07), vig removed; prior Bet365/kickoff.co.uk (2026-10-04) had 67.1/20.6/12.3"},
-    # Man City @ Liverpool, 2026-10-11: book treats it as a dead-even coin flip (both sides priced identically).
-    # Re-checked 2026-10-07: betus.com.pa line unchanged (still dated 2026-10-05, same devigged numbers).
-    ("Manchester City", "Liverpool"): {"home_win_prob": 0.371, "draw_prob": 0.258, "away_win_prob": 0.371, "book": "betus.com.pa (2026-10-06, re-checked 2026-10-07, unchanged), vig removed"},
+    # 2026-10-14: Leeds-Arsenal (10-10) and Man City-Liverpool (10-11) have both been played and
+    # graded -- those lines are retired. Next round is Oct 17-19 (post int'l-break GW7), standings
+    # reconfirmed unchanged (6 GP each, no midweek league games during the break). Fresh market line
+    # found for the Man City vs. Ipswich Town fixture (10-17): bet365 via actionnetwork.com
+    # (2026-10-14) American moneyline City -1200 / Draw +1100 / Ipswich +2000 -- devigged below.
+    # No reliable current line found for Nottingham Forest vs. Arsenal (10-18); the only number
+    # located (bettingodds.com) was attached to a stale Feb-2025 article, so skipped rather than
+    # publish a mismatched/fabricated-looking price.
+    ("Ipswich Town", "Manchester City"): {"home_win_prob": 0.876, "draw_prob": 0.079, "away_win_prob": 0.045, "book": "bet365 via actionnetwork.com (2026-10-14): City -1200/Draw +1100/Ipswich +2000, vig removed"},
 }
 
 epl_fixtures = [(r["away"], r["home"], r["date"]) for r in read_csv("epl_fixtures.csv")]

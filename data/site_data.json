@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13",
+  "generated_at": "2026-10-14",
   "model_version": 1,
   "leagues": {
     "nfl": {
@@ -81,14 +81,14 @@
           "pick_prob": 0.551,
           "confidence": "Lean",
           "market_odds": {
-            "home_ml": "+188",
+            "home_ml": "+195",
             "away_ml": "-225",
-            "book": "statsniper.com (FanDuel/BetMGM/DraftKings/Caesars aggregate, 2026-10-13), cross-checked vs. fantasydata.com (Ravens -225/Browns +187) -- Ravens favored by ~3.5-4.5, total ~40.5-41.5; pre-Week-6-injury-report snapshot"
+            "book": "statsniper.com multi-book aggregate (DraftKings/FanDuel/BetMGM/Caesars, 2026-10-14) -- Ravens -220 to -238/Browns +180 to +195, using -225/+195 as a representative mid-pack line; cross-checked vs. Dimers.com consensus (-212/+203, 2026-10-13 9:44pm ET) -- spread Ravens -4.5, total 41.5, pre-Week-6-injury-report snapshot"
           },
           "value_bet": {
-            "market_implied_prob": 0.334,
+            "market_implied_prob": 0.329,
             "model_prob": 0.449,
-            "edge_pts": 0.115,
+            "edge_pts": 0.12,
             "read": "Model leans slightly more toward the home side than the market does.",
             "large_disagreement": false
           }
@@ -197,7 +197,7 @@
     },
     "mlb": {
       "label": "MLB",
-      "status": "2026 regular season complete (ended Sept 27) \u2014 ratings above are final-season power ratings. Postseason underway, confirmed as of Oct 13: NLCS \u2014 Milwaukee Brewers lead the LA Dodgers 2-0 (Game 1: Brewers 2-1, Game 2: Brewers 7-4, both at Milwaukee); Game 3 is Wed Oct 14 in Los Angeles. ALDS is decided \u2014 Cleveland Guardians beat the Chicago White Sox 3-2 (Game 5, Oct 10). ALCS \u2014 Cleveland Guardians lead the Tampa Bay Rays 1-0 (Game 1: Guardians 7-3); Game 2 is tonight, Oct 13, at Tampa Bay. World Series matchup not yet set. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
+      "status": "2026 regular season complete (ended Sept 27) \u2014 ratings above are final-season power ratings. Postseason underway, confirmed as of Oct 14: NLCS \u2014 Milwaukee Brewers lead the LA Dodgers 2-0 (Game 1: Brewers 2-1, Game 2: Brewers 7-4, both at Milwaukee); Game 3 is tonight, Oct 14, at Dodger Stadium (not yet played as of this refresh). ALDS is decided \u2014 Cleveland Guardians beat the Chicago White Sox 3-2 (Game 5, Oct 10). ALCS \u2014 tied 1-1: Cleveland Guardians won Game 1 7-3 at Tampa Bay (Oct 12); Tampa Bay reportedly evened the series with a 3-1 Game 2 win (Oct 13) \u2014 that result carries lower source confidence as of this refresh, worth a spot-check. Game 3 is Oct 15 at Cleveland. World Series matchup not yet set. Bracket-style postseason scheduling isn't modeled by this pipeline yet, so no new picks are generated until the format is extended.",
       "ratings": {
         "Tampa Bay Rays": 0.473,
         "New York Yankees": 0.762,
@@ -292,7 +292,21 @@
           "home_win_prob": 0.725,
           "pick": "Manchester City",
           "pick_prob": 0.725,
-          "confidence": "Moderate"
+          "confidence": "Moderate",
+          "market_odds": {
+            "home_win_prob": 0.876,
+            "draw_prob": 0.079,
+            "away_win_prob": 0.045,
+            "book": "bet365 via actionnetwork.com (2026-10-14): City -1200/Draw +1100/Ipswich +2000, vig removed"
+          },
+          "value_bet": {
+            "market_implied_prob": 0.876,
+            "model_prob": 0.725,
+            "edge_pts": -0.151,
+            "read": "Large disagreement with the market \u2014 more likely our simple model is missing context than a real edge over the book's pricing.",
+            "large_disagreement": true,
+            "note": "Market prob is a 3-way (home/draw/away) line; our model does not yet price a draw outcome, so this comparison is approximate."
+          }
         },
         {
           "away": "Aston Villa",
